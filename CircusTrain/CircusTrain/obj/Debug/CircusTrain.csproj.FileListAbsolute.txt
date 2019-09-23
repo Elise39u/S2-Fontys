@@ -1,0 +1,10 @@
+C:\Users\justi\source\repos\CircusTrain\CircusTrain\bin\Debug\CircusTrain.exe.config
+C:\Users\justi\source\repos\CircusTrain\CircusTrain\bin\Debug\CircusTrain.exe
+C:\Users\justi\source\repos\CircusTrain\CircusTrain\bin\Debug\CircusTrain.pdb
+C:\Users\justi\source\repos\CircusTrain\CircusTrain\obj\Debug\CircusTrain.csprojAssemblyReference.cache
+C:\Users\justi\source\repos\CircusTrain\CircusTrain\obj\Debug\CircusTrain.Form1.resources
+C:\Users\justi\source\repos\CircusTrain\CircusTrain\obj\Debug\CircusTrain.Properties.Resources.resources
+C:\Users\justi\source\repos\CircusTrain\CircusTrain\obj\Debug\CircusTrain.csproj.GenerateResource.cache
+C:\Users\justi\source\repos\CircusTrain\CircusTrain\obj\Debug\CircusTrain.csproj.CoreCompileInputs.cache
+C:\Users\justi\source\repos\CircusTrain\CircusTrain\obj\Debug\CircusTrain.exe
+C:\Users\justi\source\repos\CircusTrain\CircusTrain\obj\Debug\CircusTrain.pdb
