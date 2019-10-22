@@ -33,7 +33,7 @@ namespace CircusTrain
             //Cast the given strings from the radiobuttons in to a diet and size enum
             Diet dietName = (Diet)Diet.Parse(typeof(Diet), dietButton.Text);
             AnimalSize animalSize = (AnimalSize)Enum.Parse(typeof(AnimalSize), sizeButton.Text);
-
+            
             //Make a new animal and add it to the List View/List Box
             Animal animal = new Animal(animalSize, dietName);
             //AnimalLV.Items.Add($"Animal size: {animal.AnimalSize} and diet: {animal.Diet}");

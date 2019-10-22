@@ -8,3 +8,13 @@ C:\Users\justi\source\repos\CircusTrain\CircusTrain\obj\Debug\CircusTrain.csproj
 C:\Users\justi\source\repos\CircusTrain\CircusTrain\obj\Debug\CircusTrain.csproj.CoreCompileInputs.cache
 C:\Users\justi\source\repos\CircusTrain\CircusTrain\obj\Debug\CircusTrain.exe
 C:\Users\justi\source\repos\CircusTrain\CircusTrain\obj\Debug\CircusTrain.pdb
+D:\Fontys\VS Projects\S2-Software-Fontys\CircusTrain\CircusTrain\bin\Debug\CircusTrain.exe.config
+D:\Fontys\VS Projects\S2-Software-Fontys\CircusTrain\CircusTrain\bin\Debug\CircusTrain.exe
+D:\Fontys\VS Projects\S2-Software-Fontys\CircusTrain\CircusTrain\bin\Debug\CircusTrain.pdb
+D:\Fontys\VS Projects\S2-Software-Fontys\CircusTrain\CircusTrain\obj\Debug\CircusTrain.csprojAssemblyReference.cache
+D:\Fontys\VS Projects\S2-Software-Fontys\CircusTrain\CircusTrain\obj\Debug\CircusTrain.Form1.resources
+D:\Fontys\VS Projects\S2-Software-Fontys\CircusTrain\CircusTrain\obj\Debug\CircusTrain.Properties.Resources.resources
+D:\Fontys\VS Projects\S2-Software-Fontys\CircusTrain\CircusTrain\obj\Debug\CircusTrain.csproj.GenerateResource.cache
+D:\Fontys\VS Projects\S2-Software-Fontys\CircusTrain\CircusTrain\obj\Debug\CircusTrain.csproj.CoreCompileInputs.cache
+D:\Fontys\VS Projects\S2-Software-Fontys\CircusTrain\CircusTrain\obj\Debug\CircusTrain.exe
+D:\Fontys\VS Projects\S2-Software-Fontys\CircusTrain\CircusTrain\obj\Debug\CircusTrain.pdb
