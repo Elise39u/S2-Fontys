@@ -211,11 +211,24 @@
       "Workshop3DAL/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.1",
+        "dependencies": {
+          "WorkShopInterface": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/Workshop3DAL.dll": {}
         },
         "runtime": {
           "bin/placeholder/Workshop3DAL.dll": {}
+        }
+      },
+      "WorkShopInterface/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.1",
+        "compile": {
+          "bin/placeholder/WorkShopInterface.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/WorkShopInterface.dll": {}
         }
       }
     }
@@ -696,11 +709,17 @@
       "type": "project",
       "path": "../Workshop3DAL/Workshop3DAL.csproj",
       "msbuildProject": "../Workshop3DAL/Workshop3DAL.csproj"
+    },
+    "WorkShopInterface/1.0.0": {
+      "type": "project",
+      "path": "../WorkShopInterface/WorkShopInterface.csproj",
+      "msbuildProject": "../WorkShopInterface/WorkShopInterface.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.1": [
       "Microsoft.NETCore.App >= 2.1.0",
+      "WorkShopInterface >= 1.0.0",
       "Workshop3DAL >= 1.0.0"
     ]
   },
@@ -736,6 +755,9 @@
           "projectReferences": {
             "D:\\Fontys\\S2 (Semester 2)\\Workshop\\Workshop3\\Workshop3DAL\\Workshop3DAL.csproj": {
               "projectPath": "D:\\Fontys\\S2 (Semester 2)\\Workshop\\Workshop3\\Workshop3DAL\\Workshop3DAL.csproj"
+            },
+            "D:\\Fontys\\S2 (Semester 2)\\Workshop\\Workshop3\\WorkShopInterface\\WorkShopInterface.csproj": {
+              "projectPath": "D:\\Fontys\\S2 (Semester 2)\\Workshop\\Workshop3\\WorkShopInterface\\WorkShopInterface.csproj"
             }
           }
         }

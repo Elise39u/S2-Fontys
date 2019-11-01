@@ -4,7 +4,8 @@ using System.Text;
 
 namespace WorkShopInterface
 {
-    interface ITeam
+    public interface ITeam<T>
     {
+        T UpdateTeam(T t);
     }
 }

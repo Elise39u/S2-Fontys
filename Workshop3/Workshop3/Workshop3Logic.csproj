@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Workshop3DAL\Workshop3DAL.csproj" />
+    <ProjectReference Include="..\WorkShopInterface\WorkShopInterface.csproj" />
   </ItemGroup>
 
 </Project>

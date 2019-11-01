@@ -4,8 +4,9 @@ using System.Text;
 
 namespace WorkShopInterface
 {
-    interface ITeamContainerDAL
+    public interface ITeamContainerDAL<T>
     {
-
+        List<T> GetAllTs();
+        T GetTByID(int id); 
     }
 }

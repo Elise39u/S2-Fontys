@@ -1,5 +1,5 @@
 ﻿using System;
-using Workshop3DAL;
+using WorkShopInterface;
 
 namespace Workshop3Logic
 {
@@ -11,6 +11,7 @@ namespace Workshop3Logic
         public string MainSponser { get; set; }
         public int FoundYear { get; set; }
         public string Director { get; set; }
+        ITeam<Team> TeamObj { get; set; }
 
         public Team(TeamDTO teamDTO)
         {
@@ -24,14 +25,13 @@ namespace Workshop3Logic
 
         public Team()
         {
-
         }
 
-        public void UpdateTeam(Team team)
+        public Team UpdateTeam(Team team)
         {
-            // return team;
+            Team storageTeam = new Team();
+            storageTeam = TeamObj.UpdateTeam(team);
+            return storageTeam;
         }
     }
-
-    
 }

@@ -1,0 +1,12 @@
+D:\Fontys\S2 (Semester 2)\Workshop\Workshop3\Workshop3DAL\bin\Debug\netcoreapp2.1\Workshop3DAL.deps.json
+D:\Fontys\S2 (Semester 2)\Workshop\Workshop3\Workshop3DAL\bin\Debug\netcoreapp2.1\Workshop3DAL.dll
+D:\Fontys\S2 (Semester 2)\Workshop\Workshop3\Workshop3DAL\bin\Debug\netcoreapp2.1\Workshop3DAL.pdb
+D:\Fontys\S2 (Semester 2)\Workshop\Workshop3\Workshop3DAL\bin\Debug\netcoreapp2.1\WorkShopInterface.dll
+D:\Fontys\S2 (Semester 2)\Workshop\Workshop3\Workshop3DAL\bin\Debug\netcoreapp2.1\WorkShopInterface.pdb
+D:\Fontys\S2 (Semester 2)\Workshop\Workshop3\Workshop3DAL\obj\Debug\netcoreapp2.1\Workshop3DAL.csprojAssemblyReference.cache
+D:\Fontys\S2 (Semester 2)\Workshop\Workshop3\Workshop3DAL\obj\Debug\netcoreapp2.1\Workshop3DAL.csproj.CoreCompileInputs.cache
+D:\Fontys\S2 (Semester 2)\Workshop\Workshop3\Workshop3DAL\obj\Debug\netcoreapp2.1\Workshop3DAL.AssemblyInfoInputs.cache
+D:\Fontys\S2 (Semester 2)\Workshop\Workshop3\Workshop3DAL\obj\Debug\netcoreapp2.1\Workshop3DAL.AssemblyInfo.cs
+D:\Fontys\S2 (Semester 2)\Workshop\Workshop3\Workshop3DAL\obj\Debug\netcoreapp2.1\Workshop3DAL.csproj.CopyComplete
+D:\Fontys\S2 (Semester 2)\Workshop\Workshop3\Workshop3DAL\obj\Debug\netcoreapp2.1\Workshop3DAL.dll
+D:\Fontys\S2 (Semester 2)\Workshop\Workshop3\Workshop3DAL\obj\Debug\netcoreapp2.1\Workshop3DAL.pdb

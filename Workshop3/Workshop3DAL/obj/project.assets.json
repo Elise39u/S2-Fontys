@@ -207,6 +207,16 @@
         "build": {
           "build/netstandard2.0/NETStandard.Library.targets": {}
         }
+      },
+      "WorkShopInterface/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.1",
+        "compile": {
+          "bin/placeholder/WorkShopInterface.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/WorkShopInterface.dll": {}
+        }
       }
     }
   },
@@ -681,11 +691,17 @@
         "netstandard.library.2.0.3.nupkg.sha512",
         "netstandard.library.nuspec"
       ]
+    },
+    "WorkShopInterface/1.0.0": {
+      "type": "project",
+      "path": "../WorkShopInterface/WorkShopInterface.csproj",
+      "msbuildProject": "../WorkShopInterface/WorkShopInterface.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.1": [
-      "Microsoft.NETCore.App >= 2.1.0"
+      "Microsoft.NETCore.App >= 2.1.0",
+      "WorkShopInterface >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -717,7 +733,11 @@
       },
       "frameworks": {
         "netcoreapp2.1": {
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\Fontys\\S2 (Semester 2)\\Workshop\\Workshop3\\WorkShopInterface\\WorkShopInterface.csproj": {
+              "projectPath": "D:\\Fontys\\S2 (Semester 2)\\Workshop\\Workshop3\\WorkShopInterface\\WorkShopInterface.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
