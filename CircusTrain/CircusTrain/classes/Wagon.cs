@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CircusTrain.classes
 {
-    class Wagon
+    public class Wagon
     {
         private int MaxWagonSize { get; } = 10;
         public List<Animal> WagonAnimals { get; private set; }
@@ -26,9 +26,9 @@ namespace CircusTrain.classes
 
         }
 
-        public int CalculateWagonSize()
+        public int CalculateWagonSize(Animal animal, int wagonSize)
         {
-            int wagonSize = 0;
+            wagonSize = wagonSize + (int)animal.AnimalSize;
 
             return wagonSize; 
         }

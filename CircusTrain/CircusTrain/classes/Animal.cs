@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace CircusTrain.classes
 {
-    enum Diet
+    public enum Diet
     {
         Carnivore,
         Herbivore,
         Omnivore
     }
 
-    enum AnimalSize
+    public enum AnimalSize
     {
         Small = 1,
         Normal = 3,
@@ -21,7 +21,7 @@ namespace CircusTrain.classes
     }
 
 
-    class Animal
+    public class Animal
     {
         public Diet Diet { get; private set; }
         public AnimalSize AnimalSize { get; private set; }
