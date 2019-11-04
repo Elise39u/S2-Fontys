@@ -6,6 +6,6 @@ namespace WorkShopInterface
 {
     public interface ITeam<T>
     {
-        T UpdateTeam(T t);
+        T UpdateTeam(T t, int id);
     }
 }
