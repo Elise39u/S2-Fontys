@@ -30,7 +30,7 @@ namespace CircusTrain.classes
         {
             wagonSize = wagonSize + (int)animal.AnimalSize;
 
-            if(wagonSize > 10)
+            if(wagonSize >= 10)
             {
                 wagonSize = 10;
             }

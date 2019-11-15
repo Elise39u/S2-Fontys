@@ -13,6 +13,7 @@ namespace CircusTrain.classes
         public List<Wagon> ClosedWagons { get; set; } = new List<Wagon>();
         public int WagonSpace = 0;
         public Wagon WagonObj = new Wagon();
+        public bool CheckFlag = false;
 
         public List<Wagon> DivideAnimals(List<Animal> animals)
         {
@@ -27,7 +28,6 @@ namespace CircusTrain.classes
                 else if (animal.Diet == Diet.Carnivore && animal.AnimalSize == AnimalSize.Normal)
                 {
                     AddWagon(animal);
-                    CloseWagons();
                 }
                 else if (animal.Diet == Diet.Herbivore && animal.AnimalSize == AnimalSize.Big)
                 {
@@ -37,6 +37,7 @@ namespace CircusTrain.classes
                     }
                     else
                     {
+                        //Issue lies toList()
                         foreach (Wagon wagon in Wagons.ToList())
                         {
                             foreach (Animal wagonAnimal in wagon.WagonAnimals.ToList())
@@ -56,17 +57,20 @@ namespace CircusTrain.classes
                                 CloseWagons();
                                 AddWagon(animal);
                             }
+                            else if (animal.Diet == Diet.Herbivore && WagonSpace >= 6 && animal.AnimalSize == AnimalSize.Big)
+                            {
+                                CloseWagons();
+                                AddWagon(animal);
+                            }
                             else
                             {
                                 wagon.AddAnimal(animal);
                             }
-                            WagonSpace = 0;
                         }
                     }
                 }
                 else if (animal.Diet == Diet.Carnivore && animal.AnimalSize == AnimalSize.Small)
                 {
-                    CloseWagons();
                     if (Wagons.Count() == 0)
                     {
                         AddWagon(animal);
@@ -79,21 +83,35 @@ namespace CircusTrain.classes
                             {
                                 if (wagonAnimal.Diet == Diet.Carnivore)
                                 {
+                                    CloseWagons();
                                     AddWagon(animal);
+                                    break;
                                 }
                                 else
                                 {
-                                    int wagonSize = WagonObj.CalculateWagonSize(animal, WagonSpace);
-                                    if (wagonSize >= 10)
+                                    if (WagonSpace == 10)
                                     {
-                                        WagonSpace = 0;
-                                        AddWagon(animal);
+                                        break;
                                     }
                                     else
                                     {
-                                        wagon.WagonAnimals.Add(animal);
+                                        WagonSpace = WagonObj.CalculateWagonSize(wagonAnimal, WagonSpace);
                                     }
                                 }
+                            }
+
+                            if (WagonSpace == 10)
+                            {
+                                CloseWagons();
+                                AddWagon(animal);
+                            }
+                            else if(WagonSpace < 10 && CheckFlag == false)
+                            {
+                                wagon.AddAnimal(animal);
+                            }
+                            else if (CheckFlag)
+                            {
+                                break;
                             }
                         }
                         WagonSpace = 0;
@@ -111,13 +129,22 @@ namespace CircusTrain.classes
                         {
                             foreach (Animal wagonAnimal in wagon.WagonAnimals.ToList())
                             {
-                                if (WagonSpace >= 10)
+                                if (wagonAnimal.Diet == Diet.Carnivore)
                                 {
+                                    CloseWagons();
+                                    AddWagon(animal);
                                     break;
                                 }
                                 else
                                 {
-                                    WagonSpace = WagonObj.CalculateWagonSize(wagonAnimal, WagonSpace);
+                                    if (WagonSpace >= 10)
+                                    {
+                                        break;
+                                    }
+                                    else
+                                    {
+                                        WagonSpace = WagonObj.CalculateWagonSize(wagonAnimal, WagonSpace);
+                                    }
                                 }
                             }
 
@@ -144,23 +171,24 @@ namespace CircusTrain.classes
             return ClosedWagons;
         }
 
+        private void CloseWagons()
+        {
+            WagonSpace = 0;
+            CheckFlag = true;
+            int wagonCount = Wagons.Count();
+
+            for (int i = 0; i < wagonCount; i++)
+            {
+                ClosedWagons.Add(Wagons[0]);
+                Wagons.Remove(Wagons[0]);
+            }
+        }
+
         public void AddWagon(Animal animal)
         {
             Wagon wagon = new Wagon();
             wagon.AddAnimal(animal);
             Wagons.Add(wagon);
-        }
-
-        public void CloseWagons()
-        {
-            WagonSpace = 0;
-            int wagonsCount = Wagons.Count();
-            //Issue loops works once on Big and Normal Carnivore
-            for (int i = 0; i < Wagons.Count(); i++)
-            {
-                ClosedWagons.Add(Wagons[i]);
-                Wagons.Remove(Wagons[i]);
-            }
         }
     }
 }

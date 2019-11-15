@@ -2,6 +2,7 @@ using NUnit.Framework;
 using CircusTrain.classes;
 using System.Collections.Generic;
 using System.Linq;
+using System;
 
 namespace Tests
 {
@@ -251,7 +252,96 @@ namespace Tests
 
             List<Wagon> wagons = Train.DivideAnimals(Animals);
 
-            Assert.AreEqual(13, wagons.Count());
+            Assert.AreEqual(11, wagons.Count());
+        }
+
+        [Test]
+        public void RandomAnimalListTest2()
+        {
+            Animals.Add(new Animal(AnimalSize.Big, Diet.Carnivore));
+            Animals.Add(new Animal(AnimalSize.Big, Diet.Herbivore));
+            Animals.Add(new Animal(AnimalSize.Normal, Diet.Carnivore));
+            Animals.Add(new Animal(AnimalSize.Small, Diet.Carnivore));
+            Animals.Add(new Animal(AnimalSize.Normal, Diet.Herbivore));
+            Animals.Add(new Animal(AnimalSize.Small, Diet.Herbivore));
+
+            List<Wagon> wagons = Train.DivideAnimals(Animals);
+
+            Assert.AreEqual(4, wagons.Count());
+        }
+
+        [Test]
+        public void RandomAnimalListTest3()
+        {
+            Animals.Add(new Animal(AnimalSize.Big, Diet.Carnivore));
+            Animals.Add(new Animal(AnimalSize.Big, Diet.Carnivore));
+
+            Animals.Add(new Animal(AnimalSize.Normal, Diet.Carnivore));
+            Animals.Add(new Animal(AnimalSize.Normal, Diet.Carnivore));
+            Animals.Add(new Animal(AnimalSize.Normal, Diet.Carnivore));
+
+            Animals.Add(new Animal(AnimalSize.Small, Diet.Carnivore));
+
+            Animals.Add(new Animal(AnimalSize.Big, Diet.Herbivore));
+            Animals.Add(new Animal(AnimalSize.Big, Diet.Herbivore));
+            Animals.Add(new Animal(AnimalSize.Big, Diet.Herbivore));
+
+            List<Wagon> wagons = Train.DivideAnimals(Animals);
+
+            Assert.AreEqual(6, wagons.Count());
+        }
+
+        [Test]
+        public void RandomAnimalListTest4()
+        {
+            Animals.Add(new Animal(AnimalSize.Big, Diet.Herbivore));
+
+            Animals.Add(new Animal(AnimalSize.Normal, Diet.Herbivore));
+            Animals.Add(new Animal(AnimalSize.Normal, Diet.Herbivore));
+            Animals.Add(new Animal(AnimalSize.Normal, Diet.Herbivore));
+
+            Animals.Add(new Animal(AnimalSize.Small, Diet.Herbivore));
+            Animals.Add(new Animal(AnimalSize.Small, Diet.Herbivore));
+            Animals.Add(new Animal(AnimalSize.Small, Diet.Herbivore));
+            Animals.Add(new Animal(AnimalSize.Small, Diet.Herbivore));
+            Animals.Add(new Animal(AnimalSize.Small, Diet.Herbivore));
+
+            List<Wagon> wagons = Train.DivideAnimals(Animals);
+
+            Assert.AreEqual(2, wagons.Count());
+        }
+
+        [Test]
+        public void RandomAnimalListTest5()
+        {
+            Animals.Add(new Animal(AnimalSize.Big, Diet.Herbivore));
+            Animals.Add(new Animal(AnimalSize.Big, Diet.Herbivore));
+
+            Animals.Add(new Animal(AnimalSize.Normal, Diet.Herbivore));
+            Animals.Add(new Animal(AnimalSize.Normal, Diet.Herbivore));
+            Animals.Add(new Animal(AnimalSize.Normal, Diet.Herbivore));
+
+            Animals.Add(new Animal(AnimalSize.Small, Diet.Carnivore));
+
+            List<Wagon> wagons = Train.DivideAnimals(Animals);
+
+            Assert.AreEqual(2, wagons.Count());
+        }
+
+        [Test]
+        public void H5AndC3OnlyTest()
+        {
+            Animals.Add(new Animal(AnimalSize.Normal, Diet.Carnivore));
+            Animals.Add(new Animal(AnimalSize.Normal, Diet.Carnivore));
+            Animals.Add(new Animal(AnimalSize.Normal, Diet.Carnivore));
+             
+            Animals.Add(new Animal(AnimalSize.Big, Diet.Herbivore));
+            Animals.Add(new Animal(AnimalSize.Big, Diet.Herbivore));
+            Animals.Add(new Animal(AnimalSize.Big, Diet.Herbivore));
+
+            List<Wagon> wagons = Train.DivideAnimals(Animals);
+
+            Assert.AreEqual(3, wagons.Count());
         }
     }
 }
