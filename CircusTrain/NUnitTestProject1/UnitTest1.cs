@@ -343,5 +343,31 @@ namespace Tests
 
             Assert.AreEqual(3, wagons.Count());
         }
+
+        [Test]
+        public void H5AndC3OnlyTestOneOfEach()
+        {
+            Animals.Add(new Animal(AnimalSize.Normal, Diet.Carnivore));
+
+            Animals.Add(new Animal(AnimalSize.Big, Diet.Herbivore));
+
+            List<Wagon> wagons = Train.DivideAnimals(Animals);
+
+            Assert.AreEqual(1, wagons.Count());
+        }
+
+        [Test]
+        public void H5AndC3OnlyTestTwoOfEach()
+        {
+            Animals.Add(new Animal(AnimalSize.Normal, Diet.Carnivore));
+            Animals.Add(new Animal(AnimalSize.Normal, Diet.Carnivore));
+
+            Animals.Add(new Animal(AnimalSize.Big, Diet.Herbivore));
+            Animals.Add(new Animal(AnimalSize.Big, Diet.Herbivore));
+
+            List<Wagon> wagons = Train.DivideAnimals(Animals);
+
+            Assert.AreEqual(2, wagons.Count());
+        }
     }
 }
