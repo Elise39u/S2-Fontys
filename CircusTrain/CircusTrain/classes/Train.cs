@@ -14,6 +14,8 @@ namespace CircusTrain.classes
         public int WagonSpace = 0;
         public Wagon WagonObj = new Wagon();
         public bool CheckFlag = false;
+        public int J = 0;
+        public bool CarnivoreCheck = false;
 
         public List<Wagon> DivideAnimals(List<Animal> animals)
         {
@@ -37,9 +39,14 @@ namespace CircusTrain.classes
                     }
                     else
                     {
-                        for (int i = 0; i < Wagons.Count(); i++)
+                        if(J >= Wagons.Count())
                         {
-                            foreach (Animal wagonAnimal in Wagons[i].WagonAnimals)
+                            J = 0;
+                        }
+
+                        for(int i = 0; i < 1; i++)
+                        {
+                            foreach (Animal wagonAnimal in Wagons[J].WagonAnimals)
                             {
                                 if (WagonSpace == 10)
                                 {
@@ -53,19 +60,21 @@ namespace CircusTrain.classes
 
                             if (WagonSpace == 10)
                             {
+                                CloseWagons();
                                 AddWagon(animal);
                             }
                             else if (animal.Diet == Diet.Herbivore && WagonSpace >= 6 && animal.AnimalSize == AnimalSize.Big)
                             {
+                                CloseWagons();
                                 AddWagon(animal);
                             }
                             else
                             {
-                                Wagons[i].AddAnimal(animal);
+                               Wagons[J].AddAnimal(animal);
                             }
-                            WagonSpace = 0;
+                           WagonSpace = 0;
+                           J++;
                         }
-                        CloseWagons();
                     }
                 }
                 else if (animal.Diet == Diet.Carnivore && animal.AnimalSize == AnimalSize.Small)
@@ -76,9 +85,14 @@ namespace CircusTrain.classes
                     }
                     else
                     {
-                        foreach (Wagon wagon in Wagons.ToList())
+                        if (J >= Wagons.Count())
                         {
-                            foreach (Animal wagonAnimal in wagon.WagonAnimals)
+                            J = 0;
+                        }
+
+                        for (int i = 0; i < 1; i++)
+                        {
+                            foreach (Animal wagonAnimal in Wagons[J].WagonAnimals)
                             {
                                 if (wagonAnimal.Diet == Diet.Carnivore)
                                 {
@@ -100,20 +114,20 @@ namespace CircusTrain.classes
 
                             if (WagonSpace == 10)
                             {
+                                CloseWagons();
                                 AddWagon(animal);
                             }
                             else if(WagonSpace < 10 && CheckFlag == false)
                             {
-                                wagon.AddAnimal(animal);
+                                Wagons[J].AddAnimal(animal);
                             }
                             else if (CheckFlag)
                             {
                                 break;
                             }
+                            WagonSpace = 0;
                         }
                     }
-                    WagonSpace = 0;
-                    CloseWagons();
                 }
                 else
                 {
@@ -123,9 +137,14 @@ namespace CircusTrain.classes
                     }
                     else
                     {
-                        foreach (Wagon wagon in Wagons.ToList())
+                        if (J >= Wagons.Count())
                         {
-                            foreach (Animal wagonAnimal in wagon.WagonAnimals)
+                            J = 0;
+                        }
+
+                        for (int i = 0; i < 1; i++)
+                        {
+                            foreach (Animal wagonAnimal in Wagons[J].WagonAnimals)
                             {
                                 if (wagonAnimal.Diet == Diet.Carnivore)
                                 {
@@ -157,9 +176,10 @@ namespace CircusTrain.classes
                             }
                             else
                             {
-                                wagon.AddAnimal(animal);
+                                Wagons[J].AddAnimal(animal);
                             }
                             WagonSpace = 0;
+                            J++;
                         }
                     }
                 }
@@ -180,6 +200,7 @@ namespace CircusTrain.classes
                 Wagons.Remove(Wagons[0]);
             }
         }
+
 
         public void AddWagon(Animal animal)
         {

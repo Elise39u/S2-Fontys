@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.28307.572
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CircusTrain", "CircusTrain\CircusTrain.csproj", "{3396DBC0-D543-4237-9204-CA88B9EAE04E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NUnitTestProject1", "NUnitTestProject1\NUnitTestProject1.csproj", "{0E3BD8F3-09EF-44B2-91C0-4833EDA9B375}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NUnitTestProject1", "NUnitTestProject1\NUnitTestProject1.csproj", "{0E3BD8F3-09EF-44B2-91C0-4833EDA9B375}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
