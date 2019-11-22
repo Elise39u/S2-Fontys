@@ -9,43 +9,57 @@ namespace CircusTrain.classes
 {
     public class Train
     {
+        //Make a new aviable wagon list and closed wagon list 
         public List<Wagon> Wagons { get; set; } = new List<Wagon>();
         public List<Wagon> ClosedWagons { get; set; } = new List<Wagon>();
+        
+        //Make some new nesscary global vars 
         public int WagonSpace = 0;
         public Wagon WagonObj = new Wagon();
         public bool CheckFlag = false;
         public int J = 0;
-        public bool CarnivoreCheck = false;
 
         public List<Wagon> DivideAnimals(List<Animal> animals)
         {
-            //animals.Sort();
+            //Loop over the animal List given by the user
             foreach(Animal animal in animals)
             {
+                //Check if the animal is a big Carnivore
                 if (animal.Diet == Diet.Carnivore && animal.AnimalSize == AnimalSize.Big)
                 {
+                    //If the animal is a carnivore and big add him to a wagon an close the wagon
                     AddWagon(animal);
                     CloseWagons();
                 }
+                //Check if the animal is a normal carnivore
                 else if (animal.Diet == Diet.Carnivore && animal.AnimalSize == AnimalSize.Normal)
                 {
+                    //If the animal is a normal carnivore add him to a new wagon
                     AddWagon(animal);
                 }
+                //Check if the animal is a big Hebivore 
                 else if (animal.Diet == Diet.Herbivore && animal.AnimalSize == AnimalSize.Big)
                 {
+                    //If the animal is a big hebivore 
+                    //Check if there is a wagon to put the big hebivore in 
                     if (Wagons.Count() == 0)
                     {
+                        //If there are no wagons make a new one and add the Big hebivore in
                         AddWagon(animal);
                     }
                     else
                     {
+                        //If there are wagons check first if J is bigger or equal than the Wagons
                         if(J >= Wagons.Count())
                         {
+                            //If j is bigger or equal rest J back to 0
                             J = 0;
                         }
 
+                        // loop once over the next wagon and its animals 
                         for(int i = 0; i < 1; i++)
                         {
+                            //Loop over the animals in the current wagon
                             foreach (Animal wagonAnimal in Wagons[J].WagonAnimals)
                             {
                                 if (WagonSpace == 10)
