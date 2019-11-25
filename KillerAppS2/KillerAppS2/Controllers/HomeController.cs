@@ -5,6 +5,10 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using KillerAppS2.Models;
+using System.Net;
+using System.Net.Http;
+using System.Web;
+using System.Web.Http;
 
 namespace KillerAppS2.Controllers
 {
@@ -14,6 +18,25 @@ namespace KillerAppS2.Controllers
         {
             return View("Index");
         }
+
+        [HttpPost]
+        public HttpResponseMessage PostChoice()
+        {
+            if(Request.Method == "POST")
+            {
+                List<KeyValuePair<string, string>> postDataList = new List<KeyValuePair<string, string>>();
+                //ViewData["PostData"] = Request.Form;
+                foreach(var testData in Request.Form)
+                {
+                    postDataList.Add(new KeyValuePair<string, string>(testData.Key, testData.Value))
+                }
+
+            } else
+            {
+                return (new HttpResponseMessage(HttpStatusCode.BadRequest));
+            }
+        }
+
         /*
         public IActionResult About()
         {

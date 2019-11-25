@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.902
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KillerAppS2", "KillerAppS2\KillerAppS2.csproj", "{09FA603F-5F8E-4723-9DD6-D3BA005A3B10}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KillerAppS2", "KillerAppS2\KillerAppS2.csproj", "{09FA603F-5F8E-4723-9DD6-D3BA005A3B10}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KillerAppS2Logic", "KillerAppS2Logic\KillerAppS2Logic.csproj", "{1E40CDDD-0D80-41E4-8707-37A6317D5A5B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KillerAppS2Logic", "KillerAppS2Logic\KillerAppS2Logic.csproj", "{1E40CDDD-0D80-41E4-8707-37A6317D5A5B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KillerAppS2DAL", "KillerAppS2DAL\KillerAppS2DAL.csproj", "{1B3AB1BC-199D-487B-9DC9-65713CC281AC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KillerAppS2DAL", "KillerAppS2DAL\KillerAppS2DAL.csproj", "{1B3AB1BC-199D-487B-9DC9-65713CC281AC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KillerAppS2Interfaces", "KillerAppS2Interfaces\KillerAppS2Interfaces.csproj", "{E7355C2F-BABA-4EC8-B264-A7332ABFFFA8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KillerAppS2Interfaces", "KillerAppS2Interfaces\KillerAppS2Interfaces.csproj", "{E7355C2F-BABA-4EC8-B264-A7332ABFFFA8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KillerAppS2DTO", "KillerAppS2DTO\KillerAppS2DTO.csproj", "{5D13047C-7315-45F6-BECE-92F77C05A83E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{E7355C2F-BABA-4EC8-B264-A7332ABFFFA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E7355C2F-BABA-4EC8-B264-A7332ABFFFA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E7355C2F-BABA-4EC8-B264-A7332ABFFFA8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D13047C-7315-45F6-BECE-92F77C05A83E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D13047C-7315-45F6-BECE-92F77C05A83E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D13047C-7315-45F6-BECE-92F77C05A83E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D13047C-7315-45F6-BECE-92F77C05A83E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

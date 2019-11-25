@@ -3,11 +3,11 @@
     Layout = "~/Views/Shared/_StartLayout.cshtml";
 }
 <h1> Welcome to the make your own game </h1>
-<p>What do you want to do?</p>
-<form action="" method="post">
-    <p> Choose an option below </p>
+<p class="instructionTxt">What do you want to do?</p>
+<form action="Home/PostChoice" method="post">
+    <p class="instructionTxt"> Choose an option below </p>
     <label> Feel like for challange?</label> <br />
-    <button> Play the game </button><br /><br />
+    <button name="Play"> Play the game </button><br /><br />
     <label> If you feel like makeing or editing you need to log in</label> <br />
-    <button> Make/Edit the game </button>
+    <button name="Make"> Make/Edit the game </button>
 </form>
