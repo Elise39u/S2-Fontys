@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using KillerAppS2.Models;
 using System.Net;
 using System.Net.Http;
-using System.Web;
-using System.Web.Http;
 
 namespace KillerAppS2.Controllers
 {
@@ -20,7 +15,7 @@ namespace KillerAppS2.Controllers
         }
 
         [HttpPost]
-        public HttpResponseMessage PostChoice()
+        public IActionResult PostChoice()
         {
             if(Request.Method == "POST")
             {
@@ -28,12 +23,13 @@ namespace KillerAppS2.Controllers
                 //ViewData["PostData"] = Request.Form;
                 foreach(var testData in Request.Form)
                 {
-                    postDataList.Add(new KeyValuePair<string, string>(testData.Key, testData.Value))
+                    postDataList.Add(new KeyValuePair<string, string>(testData.Key, testData.Value));
                 }
-
-            } else
+                return RedirectToAction("Index", "User", postDataList);
+            }
+            else
             {
-                return (new HttpResponseMessage(HttpStatusCode.BadRequest));
+                return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
             }
         }
 

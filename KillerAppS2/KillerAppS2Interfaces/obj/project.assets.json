@@ -207,6 +207,16 @@
         "build": {
           "build/netstandard2.0/NETStandard.Library.targets": {}
         }
+      },
+      "KillerAppS2DTO/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.1",
+        "compile": {
+          "bin/placeholder/KillerAppS2DTO.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/KillerAppS2DTO.dll": {}
+        }
       }
     }
   },
@@ -681,10 +691,16 @@
         "netstandard.library.2.0.3.nupkg.sha512",
         "netstandard.library.nuspec"
       ]
+    },
+    "KillerAppS2DTO/1.0.0": {
+      "type": "project",
+      "path": "../KillerAppS2DTO/KillerAppS2DTO.csproj",
+      "msbuildProject": "../KillerAppS2DTO/KillerAppS2DTO.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.1": [
+      "KillerAppS2DTO >= 1.0.0",
       "Microsoft.NETCore.App >= 2.1.0"
     ]
   },
@@ -717,7 +733,11 @@
       },
       "frameworks": {
         "netcoreapp2.1": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\justi\\source\\repos\\KillerAppS2\\KillerAppS2DTO\\KillerAppS2DTO.csproj": {
+              "projectPath": "C:\\Users\\justi\\source\\repos\\KillerAppS2\\KillerAppS2DTO\\KillerAppS2DTO.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

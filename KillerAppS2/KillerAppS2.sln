@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KillerAppS2DAL", "KillerApp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KillerAppS2Interfaces", "KillerAppS2Interfaces\KillerAppS2Interfaces.csproj", "{E7355C2F-BABA-4EC8-B264-A7332ABFFFA8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KillerAppS2DTO", "KillerAppS2DTO\KillerAppS2DTO.csproj", "{5D13047C-7315-45F6-BECE-92F77C05A83E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KillerAppS2DTO", "KillerAppS2DTO\KillerAppS2DTO.csproj", "{5D13047C-7315-45F6-BECE-92F77C05A83E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

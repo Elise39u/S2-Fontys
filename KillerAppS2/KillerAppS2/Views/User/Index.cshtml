@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewData["Title"] = "REEEE";
+    Layout = "~/Views/Shared/_StartLayout.cshtml";
+    List<string> testList = new List<string>();
+    foreach(var test in ViewData)
+    {
+        testList.Add("Key is: " + test.Key + " Value is: " + test.Value);
+    }
+}
+
+<h1> You choose @ViewData["KeyCheck"]</h1>
+<p> First you need to login below to continu</p>
+<p> New to the page register first</p>
+@foreach(var data in testList)
+{
+    <data>
+        @data <br>
+    </data>
+}
+
