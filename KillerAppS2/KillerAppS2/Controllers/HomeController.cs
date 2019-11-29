@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using KillerAppS2.Models;
 using System.Net;
 using System.Net.Http;
+using Microsoft.AspNetCore.Http;
 
 namespace KillerAppS2.Controllers
 {
@@ -25,7 +26,8 @@ namespace KillerAppS2.Controllers
                 {
                     postDataList.Add(new KeyValuePair<string, string>(testData.Key, testData.Value));
                 }
-                return RedirectToAction("Index", "User", postDataList);
+                //Session["KeyData"] = (ISession)postDataList;
+                return RedirectToAction("Index", "User");
             }
             else
             {

@@ -12,25 +12,26 @@ namespace KillerAppS2.Controllers
     {
         public string KeyCheck { get; set; } = "";
 
-        public IActionResult Index(List<KeyValuePair<string, string>> keyCheck)
+        public IActionResult Index()
         {
-            keyCheck.ForEach(
-                    x =>
-                    {
-                        if(x.Key == "Make")
-                        {
-                            KeyCheck = "Makeing/Editing";
-                        }
-                        else if(x.Key == "Play")
-                        {
-                            KeyCheck = "Gameing";
-                        }
-                        else
-                        {
-                            Error();
-                        }
-                    }
-                );
+            //List<KeyValuePair<string, string>> keyData = HttpContext.GetSession("KeyData");
+            //.ForEach(
+            //        x =>
+            //        {
+            //            if(x.Key == "Make")
+            //            {
+            //                KeyCheck = "Makeing/Editing";
+            //            }
+            //            else if(x.Key == "Play")
+            //            {
+            //                KeyCheck = "Gameing";
+            //            }
+            //            else
+            //            {
+            //                Error();
+            //            }
+            //        }
+            //    );
             ViewData["Key"] = KeyCheck;
             return View("Index");
         }

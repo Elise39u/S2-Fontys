@@ -1,0 +1,6 @@
+C:\Users\justi\source\repos\KillerAppS2\KillerAppS2DAL\bin\Debug\netcoreapp2.1\KillerAppS2DAL.deps.json
+C:\Users\justi\source\repos\KillerAppS2\KillerAppS2DAL\bin\Debug\netcoreapp2.1\KillerAppS2DAL.dll
+C:\Users\justi\source\repos\KillerAppS2\KillerAppS2DAL\obj\Debug\netcoreapp2.1\KillerAppS2DAL.csproj.CoreCompileInputs.cache
+C:\Users\justi\source\repos\KillerAppS2\KillerAppS2DAL\obj\Debug\netcoreapp2.1\KillerAppS2DAL.AssemblyInfoInputs.cache
+C:\Users\justi\source\repos\KillerAppS2\KillerAppS2DAL\obj\Debug\netcoreapp2.1\KillerAppS2DAL.AssemblyInfo.cs
+C:\Users\justi\source\repos\KillerAppS2\KillerAppS2DAL\obj\Debug\netcoreapp2.1\KillerAppS2DAL.csprojAssemblyReference.cache
