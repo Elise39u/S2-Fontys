@@ -40,56 +40,7 @@ namespace CircusTrain.classes
                 //Check if the animal is a big Hebivore 
                 else if (animal.Diet == Diet.Herbivore && animal.AnimalSize == AnimalSize.Big)
                 {
-                    //If the animal is a big hebivore 
-                    //Check if there is a wagon to put the big hebivore in 
-                    if (Wagons.Count() == 0)
-                    {
-                        //If there are no wagons make a new one and add the Big hebivore in
-                        AddWagon(animal);
-                    }
-                    else
-                    {
-                        //If there are wagons check first if J is bigger or equal than the Wagons
-                        if(J >= Wagons.Count())
-                        {
-                            //If j is bigger or equal rest J back to 0
-                            J = 0;
-                        }
-
-                        // loop once over the next wagon and its animals 
-                        for(int i = 0; i < 1; i++)
-                        {
-                            //Loop over the animals in the current wagon
-                            foreach (Animal wagonAnimal in Wagons[J].WagonAnimals)
-                            {
-                                if (WagonSpace == 10)
-                                {
-                                    break;
-                                }
-                                else
-                                {
-                                    WagonSpace = WagonObj.CalculateWagonSize(wagonAnimal, WagonSpace);
-                                }
-                            }
-
-                            if (WagonSpace == 10)
-                            {
-                                CloseWagons();
-                                AddWagon(animal);
-                            }
-                            else if (animal.Diet == Diet.Herbivore && WagonSpace >= 6 && animal.AnimalSize == AnimalSize.Big)
-                            {
-                                CloseWagons();
-                                AddWagon(animal);
-                            }
-                            else
-                            {
-                               Wagons[J].AddAnimal(animal);
-                            }
-                           WagonSpace = 0;
-                           J++;
-                        }
-                    }
+                    DivideAnimal(animal);
                 }
                 else if (animal.Diet == Diet.Carnivore && animal.AnimalSize == AnimalSize.Small)
                 {
@@ -202,7 +153,74 @@ namespace CircusTrain.classes
             return ClosedWagons;
         }
 
-        private void CloseWagons()
+        public void DivideAnimal(Animal animal)
+        {
+            bool ContinuDividing = EmptyWagonListCheck(animal);
+            CheckWagonSearcher();
+
+            if (ContinuDividing == false)
+            {
+                // loop once over the next wagon and its animals 
+                for (int i = 0; i < 1; i++)
+                {
+                    //Loop over the animals in the current wagon
+                    foreach (Animal wagonAnimal in Wagons[J].WagonAnimals)
+                    {
+                        if (WagonSpace == 10)
+                        {
+                            break;
+                        }
+                        else
+                        {
+                            WagonSpace = WagonObj.CalculateWagonSize(wagonAnimal, WagonSpace);
+                        }
+                    }
+
+                    if (WagonSpace == 10)
+                    {
+                        CloseWagons();
+                        AddWagon(animal);
+                    }
+                    else if (animal.Diet == Diet.Herbivore && WagonSpace >= 6 && animal.AnimalSize == AnimalSize.Big)
+                    {
+                        CloseWagons();
+                        AddWagon(animal);
+                    }
+                    else
+                    {
+                        Wagons[J].AddAnimal(animal);
+                    }
+                    WagonSpace = 0;
+                    J++;
+                }
+            }
+        }
+
+        public void CheckWagonSearcher()
+        {
+            //If there are wagons check first if J is bigger or equal than the Wagons
+            if (J >= Wagons.Count())
+            {
+                //If j is bigger or equal rest J back to 0
+                J = 0;
+            }
+        }
+
+        public bool EmptyWagonListCheck(Animal animal)
+        {
+            //If there are no wagons make a new one and add the Big hebivore in
+            if (Wagons.Count == 0)
+            {
+                AddWagon(animal);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public void CloseWagons()
         {
             WagonSpace = 0;
             CheckFlag = true;
