@@ -218,9 +218,6 @@ namespace Tests
         [Test]
         public void RandomAnimalListTest1()
         {
-            Animals.Add(new Animal(AnimalSize.Normal, Diet.Carnivore));
-            Animals.Add(new Animal(AnimalSize.Normal, Diet.Carnivore));
-            Animals.Add(new Animal(AnimalSize.Normal, Diet.Carnivore));
 
             Animals.Add(new Animal(AnimalSize.Big, Diet.Carnivore));
             Animals.Add(new Animal(AnimalSize.Big, Diet.Carnivore));
@@ -230,6 +227,10 @@ namespace Tests
             Animals.Add(new Animal(AnimalSize.Big, Diet.Herbivore));
             Animals.Add(new Animal(AnimalSize.Big, Diet.Herbivore));
             Animals.Add(new Animal(AnimalSize.Big, Diet.Herbivore));
+
+            Animals.Add(new Animal(AnimalSize.Normal, Diet.Carnivore));
+            Animals.Add(new Animal(AnimalSize.Normal, Diet.Carnivore));
+            Animals.Add(new Animal(AnimalSize.Normal, Diet.Carnivore));
 
             Animals.Add(new Animal(AnimalSize.Normal, Diet.Herbivore));
             Animals.Add(new Animal(AnimalSize.Normal, Diet.Herbivore));
@@ -368,6 +369,94 @@ namespace Tests
             List<Wagon> wagons = Train.DivideAnimals(Animals);
 
             Assert.AreEqual(2, wagons.Count());
+        }
+
+        [Test]
+        public void SmallAndMediumCarnivoreOneOfEach()
+        {
+            Animals.Add(new Animal(AnimalSize.Normal, Diet.Carnivore));
+
+            Animals.Add(new Animal(AnimalSize.Small, Diet.Carnivore));
+
+            List<Wagon> wagons = Train.DivideAnimals(Animals);
+
+            Assert.AreEqual(2, wagons.Count());
+        }
+
+        [Test]
+        public void SmallAndMediumCarnivoreMoreOfEach()
+        {
+            Animals.Add(new Animal(AnimalSize.Normal, Diet.Carnivore));
+            Animals.Add(new Animal(AnimalSize.Normal, Diet.Carnivore));
+            Animals.Add(new Animal(AnimalSize.Normal, Diet.Carnivore));
+
+            Animals.Add(new Animal(AnimalSize.Small, Diet.Carnivore));
+            Animals.Add(new Animal(AnimalSize.Small, Diet.Carnivore));
+            Animals.Add(new Animal(AnimalSize.Small, Diet.Carnivore));
+
+            List<Wagon> wagons = Train.DivideAnimals(Animals);
+
+            Assert.AreEqual(6, wagons.Count());
+        }
+
+        [Test]
+        public void SmallHebivoreAndCarnivoreOnlyOne()
+        {
+            Animals.Add(new Animal(AnimalSize.Small, Diet.Carnivore));
+
+            Animals.Add(new Animal(AnimalSize.Small, Diet.Herbivore));
+
+            List<Wagon> wagons = Train.DivideAnimals(Animals);
+
+            Assert.AreEqual(2, wagons.Count());
+        }
+
+        [Test]
+        public void SmallHebivoreAndCarnivoreTogether()
+        {
+            Animals.Add(new Animal(AnimalSize.Small, Diet.Carnivore));
+            Animals.Add(new Animal(AnimalSize.Small, Diet.Carnivore));
+            Animals.Add(new Animal(AnimalSize.Small, Diet.Carnivore));
+            Animals.Add(new Animal(AnimalSize.Small, Diet.Carnivore));
+            Animals.Add(new Animal(AnimalSize.Small, Diet.Carnivore));
+
+            Animals.Add(new Animal(AnimalSize.Small, Diet.Herbivore));
+            Animals.Add(new Animal(AnimalSize.Small, Diet.Herbivore));
+            Animals.Add(new Animal(AnimalSize.Small, Diet.Herbivore));
+            Animals.Add(new Animal(AnimalSize.Small, Diet.Herbivore));
+            Animals.Add(new Animal(AnimalSize.Small, Diet.Herbivore));
+
+            List<Wagon> wagons = Train.DivideAnimals(Animals);
+
+            Assert.AreEqual(6, wagons.Count());
+        }
+
+        [Test]
+        public void MediumHebivoreAndCarnivoreOneofEach()
+        {
+            Animals.Add(new Animal(AnimalSize.Normal, Diet.Carnivore));
+
+            Animals.Add(new Animal(AnimalSize.Normal, Diet.Herbivore));
+
+            List<Wagon> wagons = Train.DivideAnimals(Animals);
+
+            Assert.AreEqual(2, wagons.Count());
+        }
+
+        [Test]
+        public void MediumHebivoreAndCarnivore()
+        {
+            Animals.Add(new Animal(AnimalSize.Normal, Diet.Carnivore));
+            Animals.Add(new Animal(AnimalSize.Normal, Diet.Carnivore));
+            Animals.Add(new Animal(AnimalSize.Normal, Diet.Carnivore));
+
+            Animals.Add(new Animal(AnimalSize.Normal, Diet.Herbivore));
+            Animals.Add(new Animal(AnimalSize.Normal, Diet.Herbivore));
+            Animals.Add(new Animal(AnimalSize.Normal, Diet.Herbivore));
+
+            List<Wagon> wagons = Train.DivideAnimals(Animals);
+
+            Assert.AreEqual(4, wagons.Count());
         }
     }
 }
