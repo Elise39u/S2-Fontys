@@ -12,12 +12,15 @@ namespace CircusTrain.classes
         //Make a new aviable wagon list and closed wagon list 
         public List<Wagon> Wagons { get; set; } = new List<Wagon>();
         public List<Wagon> ClosedWagons { get; set; } = new List<Wagon>();
-        
+
         //Make some new nesscary global vars 
         public int WagonSpace = 0;
         public Wagon WagonObj = new Wagon();
         public bool CheckFlag = false;
         public int J = 0;
+        public bool CarniVoreAddCheck = false;
+        public bool SameSizeCheck = false;
+        public bool AddBigHebivore = false;
 
         public List<Wagon> DivideAnimals(List<Animal> animals)
         {
@@ -34,8 +37,7 @@ namespace CircusTrain.classes
                 //Check if the animal is a normal carnivore
                 else if (animal.Diet == Diet.Carnivore && animal.AnimalSize == AnimalSize.Normal)
                 {
-                    //If the animal is a normal carnivore add him to a new wagon
-                    AddWagon(animal);
+                    DivideCarnivoreAnimal(animal);
                 }
                 //Check if the animal is a big Hebivore 
                 else if (animal.Diet == Diet.Herbivore && animal.AnimalSize == AnimalSize.Big)
@@ -44,13 +46,7 @@ namespace CircusTrain.classes
                 }
                 else if (animal.Diet == Diet.Carnivore && animal.AnimalSize == AnimalSize.Small)
                 {
-                    bool ContinuDividing = EmptyWagonListCheck(animal);
-
-                    if (ContinuDividing == false)
-                    {
-                        CheckWagonSearcher();
-                        DivideAnimal(animal);
-                    }
+                    DivideCarnivoreAnimal(animal);
                 }
                 else
                 {
@@ -61,33 +57,53 @@ namespace CircusTrain.classes
             return ClosedWagons;
         }
 
-            public void DivideAnimal(Animal animal)
-            {
-                bool ContinuDividing = EmptyWagonListCheck(animal);
-                CheckWagonSearcher();
+        private void DivideCarnivoreAnimal(Animal animal)
+        {
+            bool ContinuDividing = EmptyWagonListCheck(animal);
 
-                if (ContinuDividing == false)
+            if (ContinuDividing == false)
+            {
+                CheckWagonSearcher();
+                DivideAnimal(animal);
+            }
+        }
+
+        public void DivideAnimal(Animal animal)
+        {
+            bool ContinuDividing = EmptyWagonListCheck(animal);
+            CheckWagonSearcher();
+
+            if (ContinuDividing == false)
+             {
+                // loop once over the next wagon and its animals 
+                for (int i = 0; i < 1; i++)
                 {
-                    // loop once over the next wagon and its animals 
-                    for (int i = 0; i < 1; i++)
-                    {
-                        CheckWagon(animal);
-                        AddingCheck(animal);
-                    }
+                    CheckWagon(animal);
+                    AddingCheck(animal);
                 }
             }
+        }
 
         private void AddingCheck(Animal animal)
         {
-            if (WagonSpace == 10)
+            if (WagonSpace >= 10 ||
+                animal.Diet == Diet.Herbivore && WagonSpace >= 9 && animal.AnimalSize == AnimalSize.Normal
+                || animal.Diet == Diet.Herbivore && WagonSpace >= 6 && animal.AnimalSize == AnimalSize.Big)
             {
-                CloseWagons();
-                AddWagon(animal);
+                AddNewWagonWithAnimal(animal);
             }
-            else if(animal.Diet == Diet.Herbivore && WagonSpace >= 9 && animal.AnimalSize == AnimalSize.Normal)
+            else if (AddBigHebivore == true)
             {
-                CloseWagons();
-                AddWagon(animal);
+                AddBigHebivore = false;
+                Wagons[J].AddAnimal(animal);
+            }
+            else if (CarniVoreAddCheck == true)
+            {
+                AddNewWagonWithCarnivore(animal);
+            }
+            else if (SameSizeCheck == true)
+            {
+                ChangeSizeCheck(animal);
             }
             else
             {
@@ -97,48 +113,62 @@ namespace CircusTrain.classes
             J++;
         }
 
+        private void AddNewWagonWithCarnivore(Animal animal)
+        {
+            CarniVoreAddCheck = false;
+            AddWagon(animal);
+        }
+
+        private void AddNewWagonWithAnimal(Animal animal)
+        {
+            CloseWagons();
+            AddWagon(animal);
+        }
+
+        private void ChangeSizeCheck(Animal animal)
+        {
+            SameSizeCheck = false;
+            CloseWagons();
+            AddWagon(animal);
+        }
+
         private void CheckWagon(Animal animal)
         {
-            //Loop over the animals in the current wagon
-            foreach (Animal wagonAnimal in Wagons[J].WagonAnimals)
+            foreach(Animal wagonAnimal in Wagons[J].WagonAnimals)
             {
-                if (wagonAnimal.Diet == Diet.Carnivore && animal.Diet == Diet.Carnivore)
+                if(wagonAnimal.Diet == Diet.Carnivore || animal.Diet == Diet.Carnivore)
                 {
-                    AddWagon(animal);
+                    DietCheck(animal, wagonAnimal);
                 }
                 else
                 {
-                    if (WagonSpace == 10)
-                    {
-                        break;
-                    }
-                    else
-                    {
-                        WagonSpace = WagonObj.CalculateWagonSize(wagonAnimal, WagonSpace);
-                    }
+                    CheckWagonSpace(wagonAnimal);
                 }
             }
         }
 
-        private void CheckWagonCarnivore(Animal animal)
+        private void DietCheck(Animal animal, Animal wagonAnimal)
         {
-            foreach (Animal wagonAnimal in Wagons[J].WagonAnimals)
+            if (wagonAnimal.Diet == animal.Diet)
             {
-                if(wagonAnimal.Diet == Diet.Carnivore)
-                {
-                    AddWagon(animal);
-                }
-                else
-                {
-                    if (WagonSpace == 10)
-                    {
-                        break;
-                    }
-                    else
-                    {
-                        WagonSpace = WagonObj.CalculateWagonSize(wagonAnimal, WagonSpace);
-                    }
-                }
+                CarniVoreAddCheck = true;
+            }
+            else
+            {
+                SizeCheck(animal, wagonAnimal);
+            }
+        }
+
+        private void SizeCheck(Animal animal, Animal wagonAnimal)
+        {
+            if (wagonAnimal.AnimalSize == animal.AnimalSize
+                || wagonAnimal.AnimalSize > animal.AnimalSize && wagonAnimal.Diet == Diet.Carnivore)
+            {
+                SameSizeCheck = true;
+            }
+            else
+            {
+                CheckWagonSpace(wagonAnimal);
             }
         }
 
@@ -166,6 +196,23 @@ namespace CircusTrain.classes
             }
         }
 
+        public void CheckWagonSpace(Animal animal)
+        {
+            if (WagonSpace == 11)
+            {
+                
+            }
+            else if(WagonSpace == 10 && animal.Diet == Diet.Herbivore && 
+                animal.AnimalSize == AnimalSize.Big)
+            {
+                AddBigHebivore = true;
+            }
+            else
+            {
+                WagonSpace = WagonObj.CalculateWagonSize(animal, WagonSpace);
+            }
+        }
+
         public void CloseWagons()
         {
             WagonSpace = 0;
@@ -178,7 +225,6 @@ namespace CircusTrain.classes
                 Wagons.Remove(Wagons[0]);
             }
         }
-
 
         public void AddWagon(Animal animal)
         {
