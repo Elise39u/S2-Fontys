@@ -20,13 +20,10 @@ namespace KillerAppS2.Controllers
         {
             if(Request.Method == "POST")
             {
-                List<KeyValuePair<string, string>> postDataList = new List<KeyValuePair<string, string>>();
-                //ViewData["PostData"] = Request.Form;
                 foreach(var testData in Request.Form)
                 {
-                    postDataList.Add(new KeyValuePair<string, string>(testData.Key, testData.Value));
+                    HttpContext.Session.SetString(testData.Key, testData.Value);
                 }
-                //Session["KeyData"] = (ISession)postDataList;
                 return RedirectToAction("Index", "User");
             }
             else
@@ -55,6 +52,7 @@ namespace KillerAppS2.Controllers
             return View();
         }
         */
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
