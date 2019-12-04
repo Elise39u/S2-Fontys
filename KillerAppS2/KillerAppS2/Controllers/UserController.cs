@@ -14,11 +14,21 @@ namespace KillerAppS2.Controllers
 
         public IActionResult Index()
         {
+            if(Request.Method == "POST")
+            {
+                ViewData["PostCheck"] = "Post appeard";
+            }
+
             foreach(var testSession in HttpContext.Session.Keys)
             {
                 ViewData["SessionData"] += " " + testSession;
             }
             return View("Index");
+        }
+
+        public IActionResult Register()
+        {
+            return View();
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

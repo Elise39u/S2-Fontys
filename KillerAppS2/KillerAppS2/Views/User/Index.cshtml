@@ -1,9 +1,26 @@
 ﻿
 @{
-    ViewData["Title"] = "REEEE";
+    ViewData["Title"] = "Login";
     Layout = "~/Views/Shared/_StartLayout.cshtml";
 }
 
 <h1> You choose @ViewData["SessionData"]</h1>
+@if (ViewData["PostCheck"] != "" || ViewData["PostCheck"] != null)
+{
+    <h2>@ViewData["PostCheck"]</h2>
+}
 <p> First you need to login below to continu</p>
 <p> New to the page register first</p>
+
+<form method="post">
+    <div class="form-group">
+        <label>Email:</label><br />
+        <input type="text" placeholder="example@hotmail.com" />
+    </div>
+    <div class="form-group">
+        <label>password:</label><br />
+        <input type="password" placeholder="Example231" />
+    </div>
+    <button name="Login">Log me in</button>
+    <button asp-controller="User" asp-action="Register" name="Register">Register page</button>
+</form>
