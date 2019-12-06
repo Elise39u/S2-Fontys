@@ -5,7 +5,7 @@ using System.Text;
 
 namespace KillerAppS2Interfaces
 {
-    interface IUserContainer
+    public interface IUserContainer<T>
     {
         string CreateUser(string username, string email, string firstName, string LastName,
             string password);

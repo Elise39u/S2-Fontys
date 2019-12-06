@@ -63,7 +63,7 @@ using KillerAppS2.Models;
             WriteLiteral("<h1> Welcome to the make your own game </h1>\r\n<p class=\"instructionTxt\">What do you want to do?</p>\r\n");
             EndContext();
             BeginContext(198, 367, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "628832362d1f4d38a211ab57cde724d9", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0a36b3fdb49f4dd7a30beae7324eda04", async() => {
                 BeginContext(243, 315, true);
                 WriteLiteral(@"
     <p class=""instructionTxt""> Choose an option below </p>

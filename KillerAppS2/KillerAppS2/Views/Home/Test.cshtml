@@ -1,17 +1,8 @@
 ﻿@{
-    @using System.Linq;
 
-    //ViewData["Title"] = "Test";
+    ViewData["Title"] = "Test";
     Layout = "~/Views/Shared/_StartLayout.cshtml";
-    List<KeyValuePair<string, string>> testData = (List<KeyValuePair<string, string>>)ViewData["PostData"];
 }
 
 <h2>Test</h2>
-@if (testData != null)
-{
-    foreach(var data in testData)
-    {
-        <p> Found key  @data.Key  </p>
-        <p> Found value  @data.Value  </p>
-    };
-}
+<p> You passed the test</p>

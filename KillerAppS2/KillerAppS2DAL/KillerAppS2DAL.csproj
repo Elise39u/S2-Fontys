@@ -8,4 +8,8 @@
     <PackageReference Include="Microsoft.AspNetCore.Session" Version="2.1.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\KillerAppS2Interfaces\KillerAppS2Interfaces.csproj" />
+  </ItemGroup>
+
 </Project>

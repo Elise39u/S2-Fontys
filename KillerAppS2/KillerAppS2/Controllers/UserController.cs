@@ -4,26 +4,38 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using KillerAppS2.Models;
+using KillerAppS2Logic;
 using Microsoft.AspNetCore.Mvc;
 
 namespace KillerAppS2.Controllers
 {
     public class UserController : Controller
     {
-        public string KeyCheck { get; set; } = "";
-
+        readonly UserLogic userLogic = new UserLogic();
+        
         public IActionResult Index()
         {
-            if(Request.Method == "POST")
-            {
-                ViewData["PostCheck"] = "Post appeard";
-            }
-
             foreach(var testSession in HttpContext.Session.Keys)
             {
                 ViewData["SessionData"] += " " + testSession;
             }
             return View("Index");
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult CheckLoginData()
+        {
+            if (ModelState.IsValid)
+            {
+                UserViewModel userViewModel = new UserViewModel
+                {
+                    Email = Request.Form["Email"],
+                    Password = Request.Form["Password"]
+                };
+                userLogic.Login(userViewModel.Email, userViewModel.Password);
+            }
+           return View("Index");
         }
 
         public IActionResult Register()

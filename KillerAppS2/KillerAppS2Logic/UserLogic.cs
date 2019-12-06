@@ -4,7 +4,7 @@ using System;
 
 namespace KillerAppS2Logic
 {
-    public class UserLogic : IUserLogic
+    public class UserLogic
     {
         public string Login(string email, string password)
         {

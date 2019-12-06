@@ -13,6 +13,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KillerAppS2Interfaces", "Ki
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KillerAppS2DTO", "KillerAppS2DTO\KillerAppS2DTO.csproj", "{5D13047C-7315-45F6-BECE-92F77C05A83E}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KillerAppS2.ViewModel", "KillerAppS2.ViewModel\KillerAppS2.ViewModel.csproj", "{CFA8C484-4C5C-429A-97B5-A5980D4D1A78}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Factory", "Factory\Factory.csproj", "{7130FD5A-6585-4F23-8C91-17BF0FE64F0F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,14 @@ Global
 		{5D13047C-7315-45F6-BECE-92F77C05A83E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5D13047C-7315-45F6-BECE-92F77C05A83E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5D13047C-7315-45F6-BECE-92F77C05A83E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CFA8C484-4C5C-429A-97B5-A5980D4D1A78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFA8C484-4C5C-429A-97B5-A5980D4D1A78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFA8C484-4C5C-429A-97B5-A5980D4D1A78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFA8C484-4C5C-429A-97B5-A5980D4D1A78}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7130FD5A-6585-4F23-8C91-17BF0FE64F0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7130FD5A-6585-4F23-8C91-17BF0FE64F0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7130FD5A-6585-4F23-8C91-17BF0FE64F0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7130FD5A-6585-4F23-8C91-17BF0FE64F0F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

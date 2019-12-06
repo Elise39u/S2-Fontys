@@ -68,12 +68,12 @@ using KillerAppS2.Models;
             WriteLiteral("\r\n<h2>Register Page</h2><\r\n<p> Start registeren below </p>\r\n<p> Already an account click the login button </p>\r\n\r\n");
             EndContext();
             BeginContext(212, 159, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8484223e7385450d8f510ec452fe63a9", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "762abec2c9dd4c8ba32d16215f5773d8", async() => {
                 BeginContext(218, 63, true);
                 WriteLiteral("\r\n    <button name=\"Register\">Make me an account</button>\r\n    ");
                 EndContext();
                 BeginContext(281, 81, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("button", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4d30d5b9e1a2498e8ceffd3fd0f43ea1", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("button", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d5d0480ce9ef4dd2aba6d25325f31c2c", async() => {
                     BeginContext(343, 10, true);
                     WriteLiteral("Login page");
                     EndContext();
