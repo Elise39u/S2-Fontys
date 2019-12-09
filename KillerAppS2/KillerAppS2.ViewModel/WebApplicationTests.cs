@@ -3,7 +3,7 @@ using KillerAppS2.Models;
 
 namespace Tests
 {
-    public class Tests
+    public class WebApplicationTests
     {
         [SetUp]
         public void Setup()

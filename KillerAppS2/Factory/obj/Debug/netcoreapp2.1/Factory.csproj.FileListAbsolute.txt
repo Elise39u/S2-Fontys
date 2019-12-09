@@ -1,0 +1,16 @@
+C:\Users\justi\source\repos\KillerAppS2\Factory\bin\Debug\netcoreapp2.1\Factory.deps.json
+C:\Users\justi\source\repos\KillerAppS2\Factory\bin\Debug\netcoreapp2.1\Factory.dll
+C:\Users\justi\source\repos\KillerAppS2\Factory\bin\Debug\netcoreapp2.1\Factory.pdb
+C:\Users\justi\source\repos\KillerAppS2\Factory\bin\Debug\netcoreapp2.1\KillerAppS2DAL.dll
+C:\Users\justi\source\repos\KillerAppS2\Factory\bin\Debug\netcoreapp2.1\KillerAppS2DTO.dll
+C:\Users\justi\source\repos\KillerAppS2\Factory\bin\Debug\netcoreapp2.1\KillerAppS2Interfaces.dll
+C:\Users\justi\source\repos\KillerAppS2\Factory\bin\Debug\netcoreapp2.1\KillerAppS2DAL.pdb
+C:\Users\justi\source\repos\KillerAppS2\Factory\bin\Debug\netcoreapp2.1\KillerAppS2DTO.pdb
+C:\Users\justi\source\repos\KillerAppS2\Factory\bin\Debug\netcoreapp2.1\KillerAppS2Interfaces.pdb
+C:\Users\justi\source\repos\KillerAppS2\Factory\obj\Debug\netcoreapp2.1\Factory.csprojAssemblyReference.cache
+C:\Users\justi\source\repos\KillerAppS2\Factory\obj\Debug\netcoreapp2.1\Factory.csproj.CoreCompileInputs.cache
+C:\Users\justi\source\repos\KillerAppS2\Factory\obj\Debug\netcoreapp2.1\Factory.AssemblyInfoInputs.cache
+C:\Users\justi\source\repos\KillerAppS2\Factory\obj\Debug\netcoreapp2.1\Factory.AssemblyInfo.cs
+C:\Users\justi\source\repos\KillerAppS2\Factory\obj\Debug\netcoreapp2.1\Factory.csproj.CopyComplete
+C:\Users\justi\source\repos\KillerAppS2\Factory\obj\Debug\netcoreapp2.1\Factory.dll
+C:\Users\justi\source\repos\KillerAppS2\Factory\obj\Debug\netcoreapp2.1\Factory.pdb

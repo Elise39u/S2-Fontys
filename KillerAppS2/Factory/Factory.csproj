@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\KillerAppS2DAL\KillerAppS2DAL.csproj" />
     <ProjectReference Include="..\KillerAppS2DTO\KillerAppS2DTO.csproj" />
     <ProjectReference Include="..\KillerAppS2Interfaces\KillerAppS2Interfaces.csproj" />

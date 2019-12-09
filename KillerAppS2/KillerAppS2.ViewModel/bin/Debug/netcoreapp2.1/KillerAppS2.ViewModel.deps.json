@@ -2012,11 +2012,38 @@
       },
       "KillerAppS2/1.0.0": {
         "dependencies": {
+          "KillerAppS2Logic": "1.0.0",
           "Microsoft.AspNetCore.Session": "2.1.1",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.1.9"
         },
         "runtime": {
           "KillerAppS2.dll": {}
+        }
+      },
+      "KillerAppS2DTO/1.0.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Session": "2.1.1"
+        },
+        "runtime": {
+          "KillerAppS2DTO.dll": {}
+        }
+      },
+      "KillerAppS2Interfaces/1.0.0": {
+        "dependencies": {
+          "KillerAppS2DTO": "1.0.0",
+          "Microsoft.AspNetCore.Session": "2.1.1"
+        },
+        "runtime": {
+          "KillerAppS2Interfaces.dll": {}
+        }
+      },
+      "KillerAppS2Logic/1.0.0": {
+        "dependencies": {
+          "KillerAppS2Interfaces": "1.0.0",
+          "Microsoft.AspNetCore.Session": "2.1.1"
+        },
+        "runtime": {
+          "KillerAppS2Logic.dll": {}
         }
       }
     }
@@ -3085,6 +3112,21 @@
       "hashPath": "system.xml.xpath.xmldocument.4.3.0.nupkg.sha512"
     },
     "KillerAppS2/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "KillerAppS2DTO/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "KillerAppS2Interfaces/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "KillerAppS2Logic/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

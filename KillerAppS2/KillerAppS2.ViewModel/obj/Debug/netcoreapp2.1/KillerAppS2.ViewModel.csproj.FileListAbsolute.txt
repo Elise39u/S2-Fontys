@@ -18,3 +18,9 @@ C:\Users\justi\source\repos\KillerAppS2\KillerAppS2.ViewModel\bin\Debug\netcorea
 C:\Users\justi\source\repos\KillerAppS2\KillerAppS2.ViewModel\obj\Debug\netcoreapp2.1\KillerAppS2.ViewModel.csproj.CopyComplete
 C:\Users\justi\source\repos\KillerAppS2\KillerAppS2.ViewModel\obj\Debug\netcoreapp2.1\KillerAppS2.ViewModel.dll
 C:\Users\justi\source\repos\KillerAppS2\KillerAppS2.ViewModel\obj\Debug\netcoreapp2.1\KillerAppS2.ViewModel.pdb
+C:\Users\justi\source\repos\KillerAppS2\KillerAppS2.ViewModel\bin\Debug\netcoreapp2.1\KillerAppS2DTO.dll
+C:\Users\justi\source\repos\KillerAppS2\KillerAppS2.ViewModel\bin\Debug\netcoreapp2.1\KillerAppS2Interfaces.dll
+C:\Users\justi\source\repos\KillerAppS2\KillerAppS2.ViewModel\bin\Debug\netcoreapp2.1\KillerAppS2Logic.dll
+C:\Users\justi\source\repos\KillerAppS2\KillerAppS2.ViewModel\bin\Debug\netcoreapp2.1\KillerAppS2DTO.pdb
+C:\Users\justi\source\repos\KillerAppS2\KillerAppS2.ViewModel\bin\Debug\netcoreapp2.1\KillerAppS2Interfaces.pdb
+C:\Users\justi\source\repos\KillerAppS2\KillerAppS2.ViewModel\bin\Debug\netcoreapp2.1\KillerAppS2Logic.pdb

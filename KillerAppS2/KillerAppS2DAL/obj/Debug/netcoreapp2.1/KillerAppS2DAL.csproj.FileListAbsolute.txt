@@ -7,3 +7,8 @@ C:\Users\justi\source\repos\KillerAppS2\KillerAppS2DAL\obj\Debug\netcoreapp2.1\K
 C:\Users\justi\source\repos\KillerAppS2\KillerAppS2DAL\bin\Debug\netcoreapp2.1\KillerAppS2DAL.pdb
 C:\Users\justi\source\repos\KillerAppS2\KillerAppS2DAL\obj\Debug\netcoreapp2.1\KillerAppS2DAL.dll
 C:\Users\justi\source\repos\KillerAppS2\KillerAppS2DAL\obj\Debug\netcoreapp2.1\KillerAppS2DAL.pdb
+C:\Users\justi\source\repos\KillerAppS2\KillerAppS2DAL\bin\Debug\netcoreapp2.1\KillerAppS2DTO.dll
+C:\Users\justi\source\repos\KillerAppS2\KillerAppS2DAL\bin\Debug\netcoreapp2.1\KillerAppS2Interfaces.dll
+C:\Users\justi\source\repos\KillerAppS2\KillerAppS2DAL\bin\Debug\netcoreapp2.1\KillerAppS2Interfaces.pdb
+C:\Users\justi\source\repos\KillerAppS2\KillerAppS2DAL\bin\Debug\netcoreapp2.1\KillerAppS2DTO.pdb
+C:\Users\justi\source\repos\KillerAppS2\KillerAppS2DAL\obj\Debug\netcoreapp2.1\KillerAppS2DAL.csproj.CopyComplete

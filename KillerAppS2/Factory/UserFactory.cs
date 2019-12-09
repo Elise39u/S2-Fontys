@@ -7,7 +7,7 @@ namespace Factory
 {
     public class UserFactory
     {
-        public static IUserLogic<UserDTO> createUserDAL()
+        public static IUserLogic<UserDTO> CreateUserDAL()
         {
             return new UserDAL();
         }

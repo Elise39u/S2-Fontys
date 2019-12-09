@@ -37,3 +37,8 @@ C:\Users\justi\source\repos\KillerAppS2\KillerAppS2\bin\Debug\netcoreapp2.1\Kill
 C:\Users\justi\source\repos\KillerAppS2\KillerAppS2\bin\Debug\netcoreapp2.1\KillerAppS2Logic.pdb
 C:\Users\justi\source\repos\KillerAppS2\KillerAppS2\bin\Debug\netcoreapp2.1\KillerAppS2DTO.pdb
 C:\Users\justi\source\repos\KillerAppS2\KillerAppS2\bin\Debug\netcoreapp2.1\KillerAppS2Interfaces.pdb
+C:\Users\justi\source\repos\KillerAppS2\KillerAppS2\bin\Debug\netcoreapp2.1\Factory.dll
+C:\Users\justi\source\repos\KillerAppS2\KillerAppS2\bin\Debug\netcoreapp2.1\KillerAppS2DAL.dll
+C:\Users\justi\source\repos\KillerAppS2\KillerAppS2\bin\Debug\netcoreapp2.1\Factory.pdb
+C:\Users\justi\source\repos\KillerAppS2\KillerAppS2\bin\Debug\netcoreapp2.1\KillerAppS2DAL.pdb
+C:\Users\justi\source\repos\KillerAppS2\KillerAppS2\obj\Debug\netcoreapp2.1\Razor\Views\Template\Index.g.cshtml.cs

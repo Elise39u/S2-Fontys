@@ -4,7 +4,9 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using KillerAppS2.Models;
+using KillerAppS2DTO;
 using KillerAppS2Logic;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace KillerAppS2.Controllers
@@ -19,23 +21,51 @@ namespace KillerAppS2.Controllers
             {
                 ViewData["SessionData"] += " " + testSession;
             }
+            HttpContext.Session.SetString("PageChoice", ViewData["SessionData"].ToString());
             return View("Index");
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult CheckLoginData()
+        public IActionResult CheckLoginData()
         {
-            if (ModelState.IsValid)
+            if (ModelState.IsValid && Request.Form["Email"] != "" && Request.Form["Password"] != "")
             {
                 UserViewModel userViewModel = new UserViewModel
                 {
                     Email = Request.Form["Email"],
                     Password = Request.Form["Password"]
                 };
-                userLogic.Login(userViewModel.Email, userViewModel.Password);
+                UserDTO DataBaseUser = userLogic.Login(userViewModel.Email, userViewModel.Password);
+                UserViewModel user = new UserViewModel
+                {
+                    Email = DataBaseUser.Email,
+                    Username = DataBaseUser.Username,
+                    Attack = DataBaseUser.Attack,
+                    Defence = DataBaseUser.Defence,
+                    CurHP = DataBaseUser.CurHP,
+                    MaxHP = DataBaseUser.MaxHP,
+                };
+                HttpContext.Session.SetObjectAsJson("User", user);
+                return ChooseNextPage();
             }
-           return View("Index");
+            else
+            {
+                return View("Index");
+            }
+        }
+
+        public IActionResult ChooseNextPage()
+        {
+           string choice = HttpContext.Session.GetString("PageChoice");
+           if(choice == "Play")
+           {
+               return View("Index");
+           }
+           else
+           {
+               return RedirectToAction("Index", "Template");
+           }
         }
 
         public IActionResult Register()

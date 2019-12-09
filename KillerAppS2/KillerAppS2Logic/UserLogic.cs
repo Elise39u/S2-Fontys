@@ -1,14 +1,23 @@
 ﻿using KillerAppS2DTO;
 using KillerAppS2Interfaces;
+using Factory;
 using System;
 
 namespace KillerAppS2Logic
 {
     public class UserLogic
     {
-        public string Login(string email, string password)
+        private IUserLogic<UserDTO> UserDAL { get; }
+
+        public UserLogic()
         {
-            throw new NotImplementedException();
+            UserDAL = UserFactory.CreateUserDAL();
+        }
+
+        public UserDTO Login(string email, string password)
+        {
+            UserDTO result = UserDAL.Login(email, password);
+            return result;
         }
 
         public string Register(UserDTO user)
