@@ -1,12 +1,12 @@
+C:\Users\justi\source\repos\KillerAppS2\KillerAppS2Interfaces\bin\Debug\netcoreapp2.1\KillerAppS2Interfaces.deps.json
+C:\Users\justi\source\repos\KillerAppS2\KillerAppS2Interfaces\bin\Debug\netcoreapp2.1\KillerAppS2Interfaces.dll
+C:\Users\justi\source\repos\KillerAppS2\KillerAppS2Interfaces\bin\Debug\netcoreapp2.1\KillerAppS2Interfaces.pdb
 C:\Users\justi\source\repos\KillerAppS2\KillerAppS2Interfaces\bin\Debug\netcoreapp2.1\KillerAppS2DTO.dll
+C:\Users\justi\source\repos\KillerAppS2\KillerAppS2Interfaces\bin\Debug\netcoreapp2.1\KillerAppS2DTO.pdb
 C:\Users\justi\source\repos\KillerAppS2\KillerAppS2Interfaces\obj\Debug\netcoreapp2.1\KillerAppS2Interfaces.csprojAssemblyReference.cache
 C:\Users\justi\source\repos\KillerAppS2\KillerAppS2Interfaces\obj\Debug\netcoreapp2.1\KillerAppS2Interfaces.csproj.CoreCompileInputs.cache
 C:\Users\justi\source\repos\KillerAppS2\KillerAppS2Interfaces\obj\Debug\netcoreapp2.1\KillerAppS2Interfaces.AssemblyInfoInputs.cache
 C:\Users\justi\source\repos\KillerAppS2\KillerAppS2Interfaces\obj\Debug\netcoreapp2.1\KillerAppS2Interfaces.AssemblyInfo.cs
-C:\Users\justi\source\repos\KillerAppS2\KillerAppS2Interfaces\bin\Debug\netcoreapp2.1\KillerAppS2Interfaces.deps.json
-C:\Users\justi\source\repos\KillerAppS2\KillerAppS2Interfaces\bin\Debug\netcoreapp2.1\KillerAppS2Interfaces.dll
-C:\Users\justi\source\repos\KillerAppS2\KillerAppS2Interfaces\bin\Debug\netcoreapp2.1\KillerAppS2Interfaces.pdb
-C:\Users\justi\source\repos\KillerAppS2\KillerAppS2Interfaces\bin\Debug\netcoreapp2.1\KillerAppS2DTO.pdb
 C:\Users\justi\source\repos\KillerAppS2\KillerAppS2Interfaces\obj\Debug\netcoreapp2.1\KillerAppS2Interfaces.csproj.CopyComplete
 C:\Users\justi\source\repos\KillerAppS2\KillerAppS2Interfaces\obj\Debug\netcoreapp2.1\KillerAppS2Interfaces.dll
 C:\Users\justi\source\repos\KillerAppS2\KillerAppS2Interfaces\obj\Debug\netcoreapp2.1\KillerAppS2Interfaces.pdb

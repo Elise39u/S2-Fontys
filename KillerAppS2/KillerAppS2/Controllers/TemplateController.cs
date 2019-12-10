@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using KillerAppS2DTO;
 
 namespace KillerAppS2.Controllers
 {
@@ -12,7 +13,7 @@ namespace KillerAppS2.Controllers
         // GET: Template
         public ActionResult Index()
         {
-            ViewData["Username"] = HttpContext.Session.GetObjectFromJson<string>("User");
+            ViewData["Username"] = HttpContext.Session.GetObjectFromJson<UserDTO>("User").Username;
             return View("Index");
         }
 
