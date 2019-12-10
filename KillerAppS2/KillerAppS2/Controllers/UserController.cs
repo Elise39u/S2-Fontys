@@ -58,9 +58,7 @@ namespace KillerAppS2.Controllers
         public IActionResult ChooseNextPage()
         {
            string choice = HttpContext.Session.GetString("PageChoice");
-           HttpContext.Session.SetString("PageChoice", "");
-
-           if (choice == "Play")
+           if(choice == "Play")
            {
                return View("Index");
            }
