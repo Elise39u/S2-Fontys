@@ -15,12 +15,12 @@ C:\Users\justi\source\repos\KillerAppS2\KillerAppS2.ViewModel\bin\Debug\netcorea
 C:\Users\justi\source\repos\KillerAppS2\KillerAppS2.ViewModel\bin\Debug\netcoreapp2.1\KillerAppS2DTO.dll
 C:\Users\justi\source\repos\KillerAppS2\KillerAppS2.ViewModel\bin\Debug\netcoreapp2.1\KillerAppS2Interfaces.dll
 C:\Users\justi\source\repos\KillerAppS2\KillerAppS2.ViewModel\bin\Debug\netcoreapp2.1\KillerAppS2Logic.dll
+C:\Users\justi\source\repos\KillerAppS2\KillerAppS2.ViewModel\bin\Debug\netcoreapp2.1\KillerAppS2Logic.pdb
 C:\Users\justi\source\repos\KillerAppS2\KillerAppS2.ViewModel\bin\Debug\netcoreapp2.1\KillerAppS2.pdb
 C:\Users\justi\source\repos\KillerAppS2\KillerAppS2.ViewModel\bin\Debug\netcoreapp2.1\Factory.pdb
 C:\Users\justi\source\repos\KillerAppS2\KillerAppS2.ViewModel\bin\Debug\netcoreapp2.1\KillerAppS2DAL.pdb
 C:\Users\justi\source\repos\KillerAppS2\KillerAppS2.ViewModel\bin\Debug\netcoreapp2.1\KillerAppS2DTO.pdb
 C:\Users\justi\source\repos\KillerAppS2\KillerAppS2.ViewModel\bin\Debug\netcoreapp2.1\KillerAppS2Interfaces.pdb
-C:\Users\justi\source\repos\KillerAppS2\KillerAppS2.ViewModel\bin\Debug\netcoreapp2.1\KillerAppS2Logic.pdb
 C:\Users\justi\source\repos\KillerAppS2\KillerAppS2.ViewModel\obj\Debug\netcoreapp2.1\KillerAppS2Tests.csprojAssemblyReference.cache
 C:\Users\justi\source\repos\KillerAppS2\KillerAppS2.ViewModel\obj\Debug\netcoreapp2.1\KillerAppS2Tests.csproj.CoreCompileInputs.cache
 C:\Users\justi\source\repos\KillerAppS2\KillerAppS2.ViewModel\obj\Debug\netcoreapp2.1\KillerAppS2Tests.AssemblyInfoInputs.cache

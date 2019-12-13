@@ -20,14 +20,10 @@ namespace KillerAppS2Logic
             return result;
         }
 
-        public string Register(UserDTO user)
+        public string Register(string email, string firstName, string prefix, string lastName, string password)
         {
-            throw new NotImplementedException();
-        }
-
-        public string Register(string username, string email, string firstName, string LastName, string password)
-        {
-            throw new NotImplementedException();
+            string result = UserDAL.Register(email, firstName, prefix, lastName, password);
+            return result;
         }
 
         public UserDTO UpdateUser(UserDTO user)

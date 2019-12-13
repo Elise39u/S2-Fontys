@@ -74,7 +74,7 @@ using KillerAppS2.Models;
             WriteLiteral("</h1>\r\n<h2>Template Maker</h2>\r\n<p> Choose an option below to edit/make/delete </p>\r\n\r\n");
             EndContext();
             BeginContext(163, 57, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("button", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a18fd8c333e64a41b075838f7d5ded91", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("button", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3f3e523eabad4962af4b8e06d2c38b80", async() => {
                 BeginContext(203, 8, true);
                 WriteLiteral("Location");
                 EndContext();
@@ -98,7 +98,7 @@ using KillerAppS2.Models;
             WriteLiteral("\r\n");
             EndContext();
             BeginContext(222, 52, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("button", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ef1d7363cb324e419b4fd1819cff970c", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("button", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c64cf704883d499aa500175c6df99150", async() => {
                 BeginContext(262, 3, true);
                 WriteLiteral("Npc");
                 EndContext();
@@ -122,7 +122,7 @@ using KillerAppS2.Models;
             WriteLiteral("\r\n");
             EndContext();
             BeginContext(276, 56, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("button", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b709f4f55e63476096d92956d32418e4", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("button", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b73ad55277c6499a9b45c7c6bbdb5d1b", async() => {
                 BeginContext(316, 7, true);
                 WriteLiteral("Monster");
                 EndContext();
@@ -146,7 +146,7 @@ using KillerAppS2.Models;
             WriteLiteral("\r\n");
             EndContext();
             BeginContext(334, 53, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("button", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f79cede3a88b4d6f9215083a564074e2", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("button", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "fd1562efa88f46c3bace0e3b6bd72c82", async() => {
                 BeginContext(374, 4, true);
                 WriteLiteral("Item");
                 EndContext();
@@ -170,7 +170,7 @@ using KillerAppS2.Models;
             WriteLiteral("\r\n");
             EndContext();
             BeginContext(389, 53, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("button", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "78ac13006dcd4829b473bda77d7de176", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("button", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "82bc947888f446c8b384f03e33cc914b", async() => {
                 BeginContext(429, 4, true);
                 WriteLiteral("Shop");
                 EndContext();
@@ -194,7 +194,7 @@ using KillerAppS2.Models;
             WriteLiteral("\r\n");
             EndContext();
             BeginContext(444, 53, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("button", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "76720dbb9fcc46c698ebfa003e73ee2f", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("button", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "10cd13f86c994fc49e8651663cc3dcb1", async() => {
                 BeginContext(484, 4, true);
                 WriteLiteral("Area");
                 EndContext();

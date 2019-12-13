@@ -1,14 +1,40 @@
-﻿
+﻿@model KillerAppS2.Models.UserViewModel
 @{
     ViewData["Title"] = "Register";
     Layout = "~/Views/Shared/_StartLayout.cshtml";
 }
 
 <h2>Register Page</h2><
-<p> Start registeren below </p>
+<p> Start the register below </p>
 <p> Already an account click the login button </p>
 
-<form>
+<form asp-action="CheckRegisterData">
+    <div class="form-group">
+        <label asp-for="FirstName">FirstName:</label><br />
+        <input asp-for="FirstName" name="FirstName" type="text" placeholder="Justin" />
+        <span asp-validation-for="FirstName" class="text-danger"></span>
+    </div> 
+    <div class="form-group">
+        <label asp-for="Prefix">Prefix:</label><br />
+        <input asp-for="Prefix" name="Prefix" type="text" placeholder="Behind" />
+        <span asp-validation-for="Prefix" class="text-danger"></span>
+    </div> 
+    <div class="form-group">
+        <label asp-for="LastName">LastName:</label><br />
+        <input asp-for="LastName" name="LastName" type="text" placeholder="HuizenBergen" />
+        <span asp-validation-for="LastName" class="text-danger"></span>
+    </div> 
+    <div class="form-group">
+        <label asp-for="Email">Email:</label><br />
+        <input asp-for="Email" name="Email" type="text" placeholder="example@hotmail.com" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div> 
+    <div class="form-group">
+        <label asp-for="Password">Password:</label><br />
+        <input asp-for="Password" name="Password" type="text" placeholder="123456" />
+        <span asp-validation-for="Password" class="text-danger"></span>
+    </div>
+
     <button name="Register">Make me an account</button>
     <button asp-controller="User" asp-action="Index" name="Login">Login page</button>
 </form>

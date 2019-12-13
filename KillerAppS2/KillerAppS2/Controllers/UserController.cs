@@ -57,20 +57,60 @@ namespace KillerAppS2.Controllers
 
         public IActionResult ChooseNextPage()
         {
-           string choice = HttpContext.Session.GetString("PageChoice");
-           if(choice == "Play")
-           {
-               return View("Index");
-           }
-           else
-           {
-               return RedirectToAction("Index", "Template");
-           }
+            string choice = HttpContext.Session.GetString("PageChoice");
+            HttpContext.Session.SetString("PageChoice", "");
+
+            return ChooseNextPage(choice);
+        }
+
+        private IActionResult ChooseNextPage(string choice)
+        {
+            if (choice == "Play")
+            {
+                return View("Index");
+            }
+            else
+            {
+                return RedirectToAction("Index", "Template");
+            }
         }
 
         public IActionResult Register()
         {
             return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult CheckRegisterData()
+        {
+            if (ModelState.IsValid)
+            {
+                UserViewModel userViewModel = new UserViewModel
+                {
+                    FirstName = Request.Form["FirstName"],
+                    Prefix = Request.Form["Prefix"],
+                    LastName = Request.Form["LastName"],
+                    Email = Request.Form["Email"],
+                    Password = Request.Form["Password"]
+                };
+                string result = userLogic.Register(userViewModel.Email, userViewModel.FirstName, userViewModel.Prefix, userViewModel.LastName, userViewModel.Password);
+                SetViewData(result);
+            }
+
+            return View("Index");
+        }
+
+        private static void SetViewData(string result)
+        {
+            if (result == "")
+            {
+
+            }
+            else
+            {
+
+            }
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

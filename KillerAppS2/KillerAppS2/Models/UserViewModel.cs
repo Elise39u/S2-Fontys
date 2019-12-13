@@ -14,6 +14,13 @@ namespace KillerAppS2.Models
         [Required(ErrorMessage = " ")]
         private string _password;
 
+        [Required(ErrorMessage = " ")]
+        private string _firstname;
+
+        [Required(ErrorMessage = " ")]
+        private string _lastname;
+        
+        private string _prefix;
         private string _username;
         private int _attack;
         private int _defence;
@@ -27,6 +34,9 @@ namespace KillerAppS2.Models
         public int Defence { get => _defence; set => _defence = value; }
         public int CurHP { get => _curhp; set => _curhp = value; }
         public int MaxHP { get => _maxhp; set => _maxhp = value; }
+        public string FirstName { get => _firstname; set => _firstname = value; }
+        public string LastName { get => _lastname; set => _lastname = value; }
+        public string Prefix { get => _prefix; set => _prefix = value; }
 
         public UserViewModel()
         {
@@ -35,6 +45,15 @@ namespace KillerAppS2.Models
 
         public UserViewModel(string email, string password)
         {
+            Email = email;
+            Password = password;
+        }
+
+        public UserViewModel(string firstName, string prefix, string lastName, string email, string password)
+        {
+            FirstName = firstName;
+            Prefix = prefix;
+            LastName = lastName;
             Email = email;
             Password = password;
         }

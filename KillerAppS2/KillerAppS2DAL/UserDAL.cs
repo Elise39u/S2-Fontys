@@ -12,11 +12,6 @@ namespace KillerAppS2DAL
         SqlConnection conn = new SqlConnection(connectionString);
         SqlCommand cmd;
 
-        public string CreateUser(string username, string email, string firstName, string LastName, string password)
-        {
-            throw new NotImplementedException();
-        }
-
         public string DeleteUser(int id)
         {
             throw new NotImplementedException();
@@ -61,9 +56,31 @@ namespace KillerAppS2DAL
             return user;
         }
 
-        public string Register(string username, string email, string firstName, string LastName, string password)
+        public string Register(string email, string firstName, string prefix, string lastName, string password)
         {
-            throw new NotImplementedException();
+            string Query = "INSERT INTO IVPJustin_User(First_name, Prefix, Last_name, Email, Password)" +
+                "VALUES(@FirstName, @Prefix, @LastName, @Email, @Password)";
+
+            using(SqlCommand cmd = new SqlCommand(Query, conn)) 
+            {
+                cmd.Parameters.Add("@FirstName", System.Data.SqlDbType.VarChar).Value = firstName;
+                cmd.Parameters.Add("@Prefix", System.Data.SqlDbType.VarChar).Value = prefix;
+                cmd.Parameters.Add("@LastName", System.Data.SqlDbType.VarChar).Value = lastName ;
+                cmd.Parameters.Add("@Email", System.Data.SqlDbType.VarChar).Value = email;
+                cmd.Parameters.Add("@Password", System.Data.SqlDbType.VarChar).Value = password;
+                conn.Open();
+                int affectedRows = cmd.ExecuteNonQuery();
+                conn.Close();
+                if(affectedRows > 0)
+                {
+                    return "Insert Succesfull";
+                }
+                else
+                {
+                    return "An error occurerd";
+                }
+            }
+
         }
 
         public UserDTO UpdateUser(UserDTO user)
