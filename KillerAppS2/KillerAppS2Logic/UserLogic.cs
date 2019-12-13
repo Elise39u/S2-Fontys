@@ -11,7 +11,7 @@ namespace KillerAppS2Logic
 
         public UserLogic()
         {
-            UserDAL = UserFactory.CreateUserDAL();
+            UserDAL = UserFactory.CreateUserDALLogic();
         }
 
         public UserDTO Login(string email, string password)

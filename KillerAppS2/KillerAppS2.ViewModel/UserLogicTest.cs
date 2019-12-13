@@ -16,7 +16,7 @@ namespace KillerAppS2.ViewModel
         [SetUp]
         public void Setup()
         {
-            UserDAL = UserFactory.CreateUserDAL();
+            UserDAL = UserFactory.CreateUserDALLogic();
         }
 
         [Test]

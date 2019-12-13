@@ -10,11 +10,18 @@ namespace KillerAppS2.Controllers
 {
     public class TemplateController : Controller
     {
+        public string TemplateName = "";
+
         // GET: Template
         public ActionResult Index()
         {
             ViewData["Username"] = HttpContext.Session.GetObjectFromJson<UserDTO>("User").Username;
             return View("Index");
+        }
+
+        public ActionResult GetAllTemplates()
+        {
+
         }
 
         // GET: Template/Details/5
@@ -90,6 +97,36 @@ namespace KillerAppS2.Controllers
             {
                 return View();
             }
+        }
+
+        public void SetTemplateNameToLocation()
+        {
+            TemplateName = "Location";
+        }
+
+        public void SetTemplateNameToNpc()
+        {
+            TemplateName = "Npc";
+        }
+
+        public void SetTemplateNameToMonster()
+        {
+            TemplateName = "Monster";
+        }
+
+        public void SetTemplateNameToItem()
+        {
+            TemplateName = "Item";
+        }
+
+        public void SetTemplateNameToShop()
+        {
+            TemplateName = "Shop";
+        }
+
+        public void SetTemplateNameToArea()
+        {
+            TemplateName = "Area";
         }
     }
 }
