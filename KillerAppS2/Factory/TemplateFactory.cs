@@ -14,9 +14,9 @@ namespace Factory
             return new TemplateDAL();
         }
 
-        public static IUserLogic<UserDTO> CreateUserDALLogic()
+        public static ITemplateContainer<TemplateDTO> CreateTemplateDalContainer()
         {
-            return new UserDAL();
+            return new TemplateDAL();
         }
     }
 }

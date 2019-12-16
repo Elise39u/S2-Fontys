@@ -46,7 +46,7 @@ namespace Tests
             Assert.AreEqual("", templateController.TemplateName, "Template name not initlized");
 
             templateController.SetTemplateNameToNpc();
-            Assert.AreEqual("Npc", templateController.TemplateName, $"Template name is not been updated, value: {templateController.TemplateName}");
+            Assert.AreEqual("NPC", templateController.TemplateName, $"Template name is not been updated, value: {templateController.TemplateName}");
         }
 
         [Test]
@@ -86,7 +86,7 @@ namespace Tests
             Assert.AreEqual("", templateController.TemplateName, "Template name not initlized");
 
             templateController.SetTemplateNameToArea();
-            Assert.AreEqual("Area", templateController.TemplateName, $"Template name is not been updated, value: {templateController.TemplateName}");
+            Assert.AreEqual("area", templateController.TemplateName, $"Template name is not been updated, value: {templateController.TemplateName}");
         }
     }
 }

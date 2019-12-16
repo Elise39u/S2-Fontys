@@ -5,12 +5,15 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using KillerAppS2DTO;
+using KillerAppS2Logic;
 
 namespace KillerAppS2.Controllers
 {
     public class TemplateController : Controller
     {
         public string TemplateName = "";
+        private TemplateLogic TemplateLogic = new TemplateLogic();
+        public List<TemplateViewModel> TemplateViewModels { get; private set; } = new List<TemplateViewModel>();
 
         // GET: Template
         public ActionResult Index()
@@ -21,7 +24,25 @@ namespace KillerAppS2.Controllers
 
         public ActionResult GetAllTemplates()
         {
-
+            List<TemplateDTO> templateDTOs = TemplateLogic.GetAllTemplates(TemplateName);
+            
+            if(templateDTOs.Count > 0)
+            {
+                foreach (var templateData in templateDTOs)
+                {
+                    TemplateViewModel templateViewModel = new TemplateViewModel
+                    {
+                        LocationId = templateData.LocationId,
+                        Name = templateData.Name,
+                        Title = templateData.Title,
+                        Story = templateData.Story,
+                        AreaId = templateData.AreaId,
+                        FotoUrl = templateData.FotoUrl
+                    };
+                    TemplateViewModels.Add(templateViewModel);
+                }
+            }
+            return View("Index", TemplateViewModels);
         }
 
         // GET: Template/Details/5
@@ -102,31 +123,37 @@ namespace KillerAppS2.Controllers
         public void SetTemplateNameToLocation()
         {
             TemplateName = "Location";
+            GetAllTemplates();
         }
 
         public void SetTemplateNameToNpc()
         {
-            TemplateName = "Npc";
+            TemplateName = "NPC";
+            GetAllTemplates();
         }
 
         public void SetTemplateNameToMonster()
         {
             TemplateName = "Monster";
+            GetAllTemplates();
         }
 
         public void SetTemplateNameToItem()
         {
             TemplateName = "Item";
+            GetAllTemplates();
         }
 
         public void SetTemplateNameToShop()
         {
             TemplateName = "Shop";
+            GetAllTemplates();
         }
 
         public void SetTemplateNameToArea()
         {
-            TemplateName = "Area";
+            TemplateName = "area";
+            GetAllTemplates();
         }
     }
 }
