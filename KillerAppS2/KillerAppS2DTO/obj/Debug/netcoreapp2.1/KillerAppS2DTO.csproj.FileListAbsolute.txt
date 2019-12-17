@@ -1,9 +1,9 @@
 C:\Users\justi\source\repos\KillerAppS2\KillerAppS2DTO\bin\Debug\netcoreapp2.1\KillerAppS2DTO.deps.json
 C:\Users\justi\source\repos\KillerAppS2\KillerAppS2DTO\bin\Debug\netcoreapp2.1\KillerAppS2DTO.dll
 C:\Users\justi\source\repos\KillerAppS2\KillerAppS2DTO\bin\Debug\netcoreapp2.1\KillerAppS2DTO.pdb
+C:\Users\justi\source\repos\KillerAppS2\KillerAppS2DTO\obj\Debug\netcoreapp2.1\KillerAppS2DTO.csprojAssemblyReference.cache
 C:\Users\justi\source\repos\KillerAppS2\KillerAppS2DTO\obj\Debug\netcoreapp2.1\KillerAppS2DTO.csproj.CoreCompileInputs.cache
 C:\Users\justi\source\repos\KillerAppS2\KillerAppS2DTO\obj\Debug\netcoreapp2.1\KillerAppS2DTO.AssemblyInfoInputs.cache
 C:\Users\justi\source\repos\KillerAppS2\KillerAppS2DTO\obj\Debug\netcoreapp2.1\KillerAppS2DTO.AssemblyInfo.cs
 C:\Users\justi\source\repos\KillerAppS2\KillerAppS2DTO\obj\Debug\netcoreapp2.1\KillerAppS2DTO.dll
 C:\Users\justi\source\repos\KillerAppS2\KillerAppS2DTO\obj\Debug\netcoreapp2.1\KillerAppS2DTO.pdb
-C:\Users\justi\source\repos\KillerAppS2\KillerAppS2DTO\obj\Debug\netcoreapp2.1\KillerAppS2DTO.csprojAssemblyReference.cache

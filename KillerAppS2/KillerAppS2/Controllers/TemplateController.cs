@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using KillerAppS2DTO;
 using KillerAppS2Logic;
+using KillerAppS2.Models;
 
 namespace KillerAppS2.Controllers
 {
@@ -28,21 +29,32 @@ namespace KillerAppS2.Controllers
             
             if(templateDTOs.Count > 0)
             {
-                foreach (var templateData in templateDTOs)
-                {
-                    TemplateViewModel templateViewModel = new TemplateViewModel
-                    {
-                        LocationId = templateData.LocationId,
-                        Name = templateData.Name,
-                        Title = templateData.Title,
-                        Story = templateData.Story,
-                        AreaId = templateData.AreaId,
-                        FotoUrl = templateData.FotoUrl
-                    };
-                    TemplateViewModels.Add(templateViewModel);
-                }
+                SetDTOToViewModel(templateDTOs);
+                return View("Index", TemplateViewModels);
             }
-            return View("Index", TemplateViewModels);
+            else
+            {
+                ViewData["nothing"] = $"There is nothing found for: {TemplateName}";
+                ViewData["TemplateName"] = TemplateName;
+                return View("Index");
+            }
+        }
+
+        private void SetDTOToViewModel(List<TemplateDTO> templateDTOs)
+        {
+            foreach (var templateData in templateDTOs)
+            {
+                TemplateViewModel templateViewModel = new TemplateViewModel
+                {
+                    LocationId = templateData.LocationId,
+                    Name = templateData.Name,
+                    Title = templateData.Title,
+                    Story = templateData.Story,
+                    AreaId = templateData.AreaId,
+                    FotoUrl = templateData.FotoUrl
+                };
+                TemplateViewModels.Add(templateViewModel);
+            }
         }
 
         // GET: Template/Details/5
@@ -120,40 +132,40 @@ namespace KillerAppS2.Controllers
             }
         }
 
-        public void SetTemplateNameToLocation()
+        public ActionResult SetTemplateNameToLocation()
         {
             TemplateName = "Location";
-            GetAllTemplates();
+            return GetAllTemplates();
         }
 
-        public void SetTemplateNameToNpc()
+        public ActionResult SetTemplateNameToNpc()
         {
             TemplateName = "NPC";
-            GetAllTemplates();
+            return GetAllTemplates();
         }
 
-        public void SetTemplateNameToMonster()
+        public ActionResult SetTemplateNameToMonster()
         {
             TemplateName = "Monster";
-            GetAllTemplates();
+            return GetAllTemplates();
         }
 
-        public void SetTemplateNameToItem()
+        public ActionResult SetTemplateNameToItem()
         {
             TemplateName = "Item";
-            GetAllTemplates();
+            return GetAllTemplates();
         }
 
-        public void SetTemplateNameToShop()
+        public ActionResult SetTemplateNameToShop()
         {
             TemplateName = "Shop";
-            GetAllTemplates();
+            return GetAllTemplates();
         }
 
-        public void SetTemplateNameToArea()
+        public ActionResult SetTemplateNameToArea()
         {
             TemplateName = "area";
-            GetAllTemplates();
+            return GetAllTemplates();
         }
     }
 }

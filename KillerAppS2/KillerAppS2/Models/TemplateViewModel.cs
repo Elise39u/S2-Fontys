@@ -1,4 +1,4 @@
-﻿namespace KillerAppS2.Controllers
+﻿namespace KillerAppS2.Models
 {
     public class TemplateViewModel
     {
@@ -9,7 +9,7 @@
         private string _story;
         private int _areaId;
         private string _fotoUrl;
-        
+
         public int LocationId { get => _locationId; set => _locationId = value; }
         public string Name { get => _name; set => _name = value; }
         public string Title { get => _title; set => _title = value; }

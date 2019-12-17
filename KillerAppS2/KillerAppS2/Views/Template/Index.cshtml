@@ -1,15 +1,40 @@
-﻿
+﻿@model KillerAppS2.Models.TemplateViewModel
 @{
     ViewData["Title"] = "Index";
 }
+
 <h1>Welcome @ViewData["Username"]</h1>
 <h2>Template Maker</h2>
 <p> Choose an option below to edit/make/delete </p>
 
-<button asp-controller="Template" asp-action="SetTemplateNameToLocation">Location</button>
-<button asp-controller="Template" asp-action="SetTemplateNameToNpc">Npc</button>
-<button asp-controller="Template" asp-action="SetTemplateNameToMonster">Monster</button>
-<button asp-controller="Template" asp-action="SetTemplateNameToItem">Item</button>
-<button asp-controller="Template" asp-action="SetTemplateNameToShop">Shop</button>
-<button asp-controller="Template" asp-action="SetTemplateNameToArea">Area</button>
+@if (Model != null)
+{
+    <p>TestData</p>
+    <p>Found Data: @Model.LocationId</p>
+    <p>Found Data: @Model.Title</p>
+    <p>Found Data: @Model.Name</p>
+    <p>Found Data: @Model.Story</p>
+    <p>Found Data: @Model.AreaId</p>
+    <p>Found Data: @Model.FotoUrl</p>
+}
+else if (Model == null && ViewData["nothing"] != null)
+{
+    <p> There is nothing  @ViewData["nothing"] <br />
+        Do you want to make a new @ViewData["TemplateName"]? </p>
+    <form method="post">
+        <button> Make a new @ViewData["TemplateName"]</button>
+        <button asp-controller="Template" asp-action="Index"> Return to the home page </button>
+    </form>
+}
+else
+{
+    <form method="post">
+        <button asp-controller="Template" asp-action="SetTemplateNameToLocation">Location</button>
+        <button asp-controller="Template" asp-action="SetTemplateNameToNpc">Npc</button>
+        <button asp-controller="Template" asp-action="SetTemplateNameToMonster">Monster</button>
+        <button asp-controller="Template" asp-action="SetTemplateNameToItem">Item</button>
+        <button asp-controller="Template" asp-action="SetTemplateNameToShop">Shop</button>
+        <button asp-controller="Template" asp-action="SetTemplateNameToArea">Area</button>
+    </form>
+}
 
