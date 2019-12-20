@@ -1,14 +1,26 @@
 using NUnit.Framework;
 using KillerAppS2.Models;
 using KillerAppS2.Controllers;
+using Microsoft.AspNetCore.Mvc;
+using KillerAppS2;
 
 namespace Tests
 {
-    public class WebApplicationTests
+    public class WebApplicationTests : ControllerBase
     {
         [SetUp]
         public void Setup()
         {
+            UserViewModel user = new UserViewModel
+            {
+                Email = "Justin555@live.nl",
+                Username = "Justin van de laar",
+                Attack = 1200,
+                Defence = 2000,
+                CurHP = 2000,
+                MaxHP = 2500,
+            };
+            HttpContext.Session.SetObjectAsJson("User", user); // Httpcontext is null cause an error
         }
 
         [Test]

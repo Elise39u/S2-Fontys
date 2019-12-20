@@ -21,13 +21,14 @@ else if (Model == null && ViewData["nothing"] != null)
 {
     <p> There is nothing  @ViewData["nothing"] <br />
         Do you want to make a new @ViewData["TemplateName"]? </p>
-    <form method="post">
-        <button> Make a new @ViewData["TemplateName"]</button>
+    <form>
+        <button name="@ViewData["TemplateName"]" asp-controller="Template" asp-action="Create"> Make a new @ViewData["TemplateName"]</button>
         <button asp-controller="Template" asp-action="Index"> Return to the home page </button>
     </form>
 }
 else
 {
+    <p>Test: @ViewData["TemplateName"]?</p>
     <form method="post">
         <button asp-controller="Template" asp-action="SetTemplateNameToLocation">Location</button>
         <button asp-controller="Template" asp-action="SetTemplateNameToNpc">Npc</button>

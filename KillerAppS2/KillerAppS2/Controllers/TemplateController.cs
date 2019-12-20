@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using KillerAppS2DTO;
 using KillerAppS2Logic;
 using KillerAppS2.Models;
+using System.Diagnostics;
 
 namespace KillerAppS2.Controllers
 {
@@ -19,15 +20,20 @@ namespace KillerAppS2.Controllers
         // GET: Template
         public ActionResult Index()
         {
-            ViewData["Username"] = HttpContext.Session.GetObjectFromJson<UserDTO>("User").Username;
+            GetUsername();
             return View("Index");
+        }
+
+        private void GetUsername()
+        {
+            ViewData["Username"] = HttpContext.Session.GetObjectFromJson<UserDTO>("User").Username;
         }
 
         public ActionResult GetAllTemplates()
         {
             List<TemplateDTO> templateDTOs = TemplateLogic.GetAllTemplates(TemplateName);
-            
-            if(templateDTOs.Count > 0)
+            GetUsername(); // <-- Caused a Issue due to systemNullReference exception
+            if (templateDTOs.Count > 0)
             {
                 SetDTOToViewModel(templateDTOs);
                 return View("Index", TemplateViewModels);
@@ -36,6 +42,7 @@ namespace KillerAppS2.Controllers
             {
                 ViewData["nothing"] = $"There is nothing found for: {TemplateName}";
                 ViewData["TemplateName"] = TemplateName;
+                TempData["TemplateName"] = TemplateName;
                 return View("Index");
             }
         }
@@ -66,6 +73,7 @@ namespace KillerAppS2.Controllers
         // GET: Template/Create
         public ActionResult Create()
         {
+            GetUsername();
             return View();
         }
 
@@ -76,7 +84,15 @@ namespace KillerAppS2.Controllers
         {
             try
             {
-                // TODO: Add insert logic here
+                TemplateViewModel templateViewModel = new TemplateViewModel
+                {
+                    AreaId = Convert.ToInt32(collection["AreaId"]),
+                    Name = collection["Name"],
+                    Title = collection["Title"],
+                    Story = collection["Story"],
+                    FotoUrl = collection["FotoUrl"]
+                };
+
 
                 return RedirectToAction(nameof(Index));
             }

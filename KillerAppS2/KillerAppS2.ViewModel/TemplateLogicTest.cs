@@ -6,9 +6,13 @@ using KillerAppS2DTO;
 using KillerAppS2DAL;
 using KillerAppS2Logic;
 using KillerAppS2Tests;
+using KillerAppS2;
 using Factory;
 using KillerAppS2Interfaces;
 using System.Linq;
+using Microsoft.AspNetCore.Mvc;
+using KillerAppS2.Models;
+using Microsoft.AspNetCore.Http;
 
 namespace KillerAppS2Tests
 {
@@ -16,12 +20,26 @@ namespace KillerAppS2Tests
     {
         public ITemplateContainer<TemplateDTO> TemplateDalContainer;
         public ITemplateLogic<TemplateDTO> TemplateDalLogic;
-
+        public TemplateLogic TemplateLogic;
+        public ControllerBase SessionControllerBase;
+        
         [SetUp]
         public void Setup()
         {
             TemplateDalContainer = TemplateFactory.CreateTemplateDalContainer();
             TemplateDalLogic = TemplateFactory.CreateTemplateDALLogic();
+            TemplateLogic = new TemplateLogic();
+
+            UserViewModel user = new UserViewModel
+            {
+                Email = "Justin555@live.nl",
+                Username = "Justin van de laar",
+                Attack = 1200,
+                Defence = 2000,
+                CurHP = 2000,
+                MaxHP = 2500,
+            };
+            SessionControllerBase.HttpContext.Session.SetObjectAsJson("User", user);
         }
 
         [Test]
@@ -41,6 +59,22 @@ namespace KillerAppS2Tests
         {
             List<TemplateDTO> templateDTOs = TemplateDalContainer.GetALLTemplatesFromDB("Location");
             Assert.AreEqual(0, templateDTOs.Count(), "There are records found");
+        }
+
+        [Test]
+        public void Create_Location_Test()
+        {
+            TemplateDTO Locaiton = new TemplateDTO
+            {
+                Name = "A new Beginning?",
+                Title = "A doom start",
+                Story = "You wake up from a nasty new years eve",
+                AreaId = 1,
+                FotoUrl = "Image/Background"
+            };
+
+            string result = TemplateLogic.CreateTemplate("Location", Locaiton);
+            Assert.AreEqual("Insert succesfull", result);
         }
     }
 }
