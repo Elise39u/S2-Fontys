@@ -118,7 +118,7 @@ namespace KillerAppS2DAL
             string Query = $"INSERT INTO IVPJustin_{templateName}(Name, Title, Story, area_Id, Foto_url) " +
                 $"VALUES(@Name, @Title, @Story, @area_Id @Foto_url)";
 
-            using(SqlCommand sqlcmd = new SqlCommand(Query, conn))
+            using(SqlCommand cmd = new SqlCommand(Query, conn))
             {
                 cmd.Parameters.Add("@Name", System.Data.SqlDbType.VarChar).Value = templateDTO.Name;
                 cmd.Parameters.Add("@Title", System.Data.SqlDbType.VarChar).Value = templateDTO.Title;

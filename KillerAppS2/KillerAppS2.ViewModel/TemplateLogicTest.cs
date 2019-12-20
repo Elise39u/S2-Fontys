@@ -21,7 +21,6 @@ namespace KillerAppS2Tests
         public ITemplateContainer<TemplateDTO> TemplateDalContainer;
         public ITemplateLogic<TemplateDTO> TemplateDalLogic;
         public TemplateLogic TemplateLogic;
-        public ControllerBase SessionControllerBase;
         
         [SetUp]
         public void Setup()
@@ -29,17 +28,6 @@ namespace KillerAppS2Tests
             TemplateDalContainer = TemplateFactory.CreateTemplateDalContainer();
             TemplateDalLogic = TemplateFactory.CreateTemplateDALLogic();
             TemplateLogic = new TemplateLogic();
-
-            UserViewModel user = new UserViewModel
-            {
-                Email = "Justin555@live.nl",
-                Username = "Justin van de laar",
-                Attack = 1200,
-                Defence = 2000,
-                CurHP = 2000,
-                MaxHP = 2500,
-            };
-            SessionControllerBase.HttpContext.Session.SetObjectAsJson("User", user);
         }
 
         [Test]

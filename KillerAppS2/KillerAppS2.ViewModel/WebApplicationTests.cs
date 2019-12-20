@@ -6,21 +6,13 @@ using KillerAppS2;
 
 namespace Tests
 {
-    public class WebApplicationTests : ControllerBase
+    public class WebApplicationTests
     {
+
         [SetUp]
         public void Setup()
         {
-            UserViewModel user = new UserViewModel
-            {
-                Email = "Justin555@live.nl",
-                Username = "Justin van de laar",
-                Attack = 1200,
-                Defence = 2000,
-                CurHP = 2000,
-                MaxHP = 2500,
-            };
-            HttpContext.Session.SetObjectAsJson("User", user); // Httpcontext is null cause an error
+
         }
 
         [Test]

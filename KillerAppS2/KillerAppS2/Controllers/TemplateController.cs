@@ -32,7 +32,7 @@ namespace KillerAppS2.Controllers
         public ActionResult GetAllTemplates()
         {
             List<TemplateDTO> templateDTOs = TemplateLogic.GetAllTemplates(TemplateName);
-            GetUsername(); // <-- Caused a Issue due to systemNullReference exception
+            //GetUsername(); <-- Caused a Issue due to systemNullReference exception in several tests
             if (templateDTOs.Count > 0)
             {
                 SetDTOToViewModel(templateDTOs);
@@ -42,7 +42,7 @@ namespace KillerAppS2.Controllers
             {
                 ViewData["nothing"] = $"There is nothing found for: {TemplateName}";
                 ViewData["TemplateName"] = TemplateName;
-                TempData["TemplateName"] = TemplateName;
+                //TempData["TemplateName"] = TemplateName; // <-- Causes a issue due to TempData begining Null 
                 return View("Index");
             }
         }
