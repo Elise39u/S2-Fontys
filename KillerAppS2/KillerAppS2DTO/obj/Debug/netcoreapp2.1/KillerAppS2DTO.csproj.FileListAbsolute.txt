@@ -6,3 +6,4 @@ C:\Users\justi\source\repos\KillerAppS2\KillerAppS2DTO\obj\Debug\netcoreapp2.1\K
 C:\Users\justi\source\repos\KillerAppS2\KillerAppS2DTO\obj\Debug\netcoreapp2.1\KillerAppS2DTO.AssemblyInfo.cs
 C:\Users\justi\source\repos\KillerAppS2\KillerAppS2DTO\obj\Debug\netcoreapp2.1\KillerAppS2DTO.dll
 C:\Users\justi\source\repos\KillerAppS2\KillerAppS2DTO\obj\Debug\netcoreapp2.1\KillerAppS2DTO.pdb
+C:\Users\justi\source\repos\KillerAppS2\KillerAppS2DTO\obj\Debug\netcoreapp2.1\KillerAppS2DTO.csprojAssemblyReference.cache

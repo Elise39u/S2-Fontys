@@ -3,16 +3,43 @@ using KillerAppS2.Models;
 using KillerAppS2.Controllers;
 using Microsoft.AspNetCore.Mvc;
 using KillerAppS2;
+using KillerAppS2Interfaces;
+using KillerAppS2DTO;
+using Factory;
 
 namespace Tests
 {
     public class WebApplicationTests
     {
+        /*
+         * Test crashes due to 2 so far known issues
+         
+         1. HttpContext is null --> Causing a system Null reference
+         This due to a UX choice. Called the Method --> GetUsername in the TemplateController 
+         This method present the username on screen for the user but Httpcontext session is not known in the test area
+         Due to Httpcontext needs ASP.Net to run its causes the system reference null exception.
+         The research suggets that we need to create a mockup van the session classes in order to get this to work. 
+         On the other side the research also says it a time consumeing and hard idea 
+
+         2. TempData Is null --> Causes a system Null reference 
+         When we comment the line with GetUserName the following error occuer 
+         A system null reference error on the line with tempdata. This choice is made so we can pas the templatename from view to view.
+         Due to same issue related with Httpcontext we get the same issue
+         The research suggets that we need to create a mockup van the session classes in order to get this to work. 
+         On the other side the research also says it a time consuming and hard idea 
+
+         Research suggets that the idea is hard to implent en time consuming
+         So for now i leave the test broken but make a not of the issues so perhaps i can look for a better soloution in the future
+         */
+        public IUserLogic<UserDTO> UserDAL;
+        public UserDTO user;
 
         [SetUp]
         public void Setup()
         {
+            UserDAL = UserFactory.CreateUserDALLogic();
 
+            user = UserDAL.Login("Justin555@Live.nl", "Dropzone8");
         }
 
         [Test]
@@ -35,7 +62,7 @@ namespace Tests
 
         [Test]
         public void Can_TemplateName_Be_Set_To_Location()
-        {
+        { 
             TemplateController templateController = new TemplateController();
             Assert.AreEqual("", templateController.TemplateName, "Template name not initlized");
 
