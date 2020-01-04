@@ -116,7 +116,7 @@ namespace KillerAppS2DAL
         private string CreateLocation(string templateName, TemplateDTO templateDTO)
         {
             string Query = $"INSERT INTO IVPJustin_{templateName}(Name, Title, Story, area_Id, Foto_url) " +
-                $"VALUES(@Name, @Title, @Story, @area_Id @Foto_url)";
+                $"VALUES(@Name, @Title, @Story, @area_Id, @Foto_url)";
 
             using(SqlCommand cmd = new SqlCommand(Query, conn))
             {

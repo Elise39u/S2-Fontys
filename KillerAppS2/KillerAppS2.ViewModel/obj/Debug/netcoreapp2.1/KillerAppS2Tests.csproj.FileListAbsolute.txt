@@ -1,9 +1,9 @@
-C:\Users\justi\source\repos\KillerAppS2\KillerAppS2.ViewModel\bin\Debug\netcoreapp2.1\KillerAppS2.Views.dll
-C:\Users\justi\source\repos\KillerAppS2\KillerAppS2.ViewModel\bin\Debug\netcoreapp2.1\KillerAppS2.Views.pdb
 C:\Users\justi\source\repos\KillerAppS2\KillerAppS2.ViewModel\bin\Debug\netcoreapp2.1\NUnit3.TestAdapter.dll
 C:\Users\justi\source\repos\KillerAppS2\KillerAppS2.ViewModel\bin\Debug\netcoreapp2.1\NUnit3.TestAdapter.pdb
 C:\Users\justi\source\repos\KillerAppS2\KillerAppS2.ViewModel\bin\Debug\netcoreapp2.1\nunit.engine.netstandard.dll
 C:\Users\justi\source\repos\KillerAppS2\KillerAppS2.ViewModel\bin\Debug\netcoreapp2.1\Mono.Cecil.dll
+C:\Users\justi\source\repos\KillerAppS2\KillerAppS2.ViewModel\bin\Debug\netcoreapp2.1\KillerAppS2.Views.dll
+C:\Users\justi\source\repos\KillerAppS2\KillerAppS2.ViewModel\bin\Debug\netcoreapp2.1\KillerAppS2.Views.pdb
 C:\Users\justi\source\repos\KillerAppS2\KillerAppS2.ViewModel\bin\Debug\netcoreapp2.1\KillerAppS2Tests.deps.json
 C:\Users\justi\source\repos\KillerAppS2\KillerAppS2.ViewModel\bin\Debug\netcoreapp2.1\KillerAppS2Tests.runtimeconfig.json
 C:\Users\justi\source\repos\KillerAppS2\KillerAppS2.ViewModel\bin\Debug\netcoreapp2.1\KillerAppS2Tests.runtimeconfig.dev.json

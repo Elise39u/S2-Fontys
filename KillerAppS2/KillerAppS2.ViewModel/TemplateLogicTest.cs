@@ -58,7 +58,7 @@ namespace KillerAppS2Tests
                 Title = "A doom start",
                 Story = "You wake up from a nasty new years eve",
                 AreaId = 1,
-                FotoUrl = "Image/Background"
+                FotoUrl = "~/Image/Background"
             };
 
             string result = TemplateLogic.CreateTemplate("Location", Locaiton);
