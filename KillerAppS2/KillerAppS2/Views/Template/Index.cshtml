@@ -1,4 +1,4 @@
-﻿@model KillerAppS2.Models.TemplateViewModel
+﻿@model List<KillerAppS2.Models.TemplateViewModel>
 @{
     ViewData["Title"] = "Index";
 }
@@ -9,13 +9,34 @@
 
 @if (Model != null)
 {
-    <p>TestData</p>
-    <p>Found Data: @Model.LocationId</p>
-    <p>Found Data: @Model.Title</p>
-    <p>Found Data: @Model.Name</p>
-    <p>Found Data: @Model.Story</p>
-    <p>Found Data: @Model.AreaId</p>
-    <p>Found Data: @Model.FotoUrl</p>
+    <table>
+        <tr>
+            <th> Title </th>
+            <th> Name </th>
+            <th> Story </th>
+            <th> Area id </th>
+            <th> Foto Url </th>
+            <th> Edit </th>
+            <th> Delete </th>
+        </tr>
+    @foreach(TemplateViewModel viewModel in Model)
+    {
+        <tr>
+            <td>@viewModel.Title </td>
+            <td>@viewModel.Name</td>
+            <td>@viewModel.Story</td>
+            <td>@viewModel.AreaId</td>
+            <td>@viewModel.FotoUrl</td>
+            <td><a asp-controller="#" asp-action="#"> Edit the Location</a></td>
+            <td><a asp-controller="#" asp-action="#"> Delete the Location</a></td>
+        </tr>
+    }
+  </table> 
+  <form>
+    <button name="@ViewData["TemplateName"]" asp-controller="Template" asp-action="Create"> Make a new @ViewData["TemplateName"]</button>
+    <button asp-controller="Template" asp-action="Index"> Return to the home page </button>
+</form>    
+  
 }
 else if (Model == null && ViewData["nothing"] != null)
 {

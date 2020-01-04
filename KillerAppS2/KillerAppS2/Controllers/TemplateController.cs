@@ -42,7 +42,6 @@ namespace KillerAppS2.Controllers
             else
             {
                 ViewData["nothing"] = $"There is nothing found for: {TemplateName}";
-                ViewData["TemplateName"] = TemplateName;
                 SetTemplateNameForView();
                 return View("Index");
             }
@@ -50,6 +49,7 @@ namespace KillerAppS2.Controllers
 
         private void SetTemplateNameForView()
         {
+            ViewData["TemplateName"] = TemplateName;
             TempData["TemplateName"] = TemplateName; // <-- Causes a issue due to TempData begining Null 
             TemplateName = TempData["TemplateName"].ToString();
         }
