@@ -10,13 +10,11 @@ namespace KillerAppS2Logic
     public class TemplateLogic
     {
         private ITemplateContainer<TemplateDTO> TemplateDalContainer { get; }
-        private ITemplateLogic<TemplateDTO> TemplateDalLogic { get; }
         public List<TemplateDTO> TemplateDTOs { get; private set; } = new List<TemplateDTO>();
 
         public TemplateLogic()
         {
             TemplateDalContainer = TemplateFactory.CreateTemplateDalContainer();
-            TemplateDalLogic = TemplateFactory.CreateTemplateDALLogic();
         }
 
         public string CreateTemplate(string templateName, TemplateDTO templateDTO)

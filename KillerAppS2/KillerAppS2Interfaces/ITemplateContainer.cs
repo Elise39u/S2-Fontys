@@ -6,7 +6,7 @@ namespace KillerAppS2Interfaces
 {
     public interface ITemplateContainer<T>
     {
-        T GetATemplateById();
+        T GetATemplateById(int templateId, string templateName);
         List<T> GetALLTemplatesFromDB(string templateName);
         T DeleteTemplate();
         string CreateTemplate(string templateName, T templateDTO);

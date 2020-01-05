@@ -13,6 +13,7 @@ namespace KillerAppS2DAL
         SqlConnection conn = new SqlConnection(connectionString);
         SqlCommand cmd;
         public List<TemplateDTO> Templates = new List<TemplateDTO>();
+        public TemplateDTO TemplateStorage;
 
         public TemplateDTO DeleteTemplate()
         {
@@ -46,46 +47,80 @@ namespace KillerAppS2DAL
             return Templates;
         }
 
-        public TemplateDTO GetATemplateById()
+        public TemplateDTO GetATemplateById(int templateId, string templateName)
         {
             throw new NotImplementedException();
         }
 
-        public TemplateDTO UpdateTemplate(TemplateDTO templateDTO)
+        public string UpdateTemplate(TemplateDTO templateDTO, string templateName)
         {
             throw new NotImplementedException();
         }
 
         public string CreateTemplate(string templateName, TemplateDTO templateDTO)
         {
-            if(templateName == "Location")
+            return ChooseTemplateAction(templateName, templateDTO, "Create");
+        }
+
+        private string ChooseTemplateAction(string templateName, TemplateDTO templateDTO, string actionName)
+        {
+            if (templateName == "Location")
             {
-                return CreateLocation(templateName, templateDTO);
+                return ChooseAction(templateName, templateDTO, actionName);
+                // return CreateLocation()
             }
-            else if(templateName == "NPC")
+            else if (templateName == "NPC")
             {
-                return CreateNpc(templateName, templateDTO);
+                return ChooseAction(templateName, templateDTO, actionName);
+                //return CreateNpc(templateName, templateDTO);
             }
-            else if(templateName == "Monster")
+            else if (templateName == "Monster")
             {
-                return CreateMonster(templateName, templateDTO);
+                return ChooseAction(templateName, templateDTO, actionName);
+                // return CreateMonster(templateName, templateDTO);
             }
-            else if(templateName == "Item")
+            else if (templateName == "Item")
             {
-                return CreateItem(templateName, templateDTO);
+                return ChooseAction(templateName, templateDTO, actionName);
+                // return CreateItem(templateName, templateDTO);
             }
-            else if(templateName == "Shop")
+            else if (templateName == "Shop")
             {
-                return CreateShop(templateName, templateDTO);
+                return ChooseAction(templateName, templateDTO, actionName);
+                //return CreateShop(templateName, templateDTO);
             }
-            else if(templateName == "area")
+            else if (templateName == "area")
             {
-                return CreateArea(templateName, templateDTO);
-            } 
+                return ChooseAction(templateName, templateDTO, actionName);
+                //return CreateArea(templateName, templateDTO);
+            }
             else
             {
                 return "TemplateName is not been reconigzed";
             }
+        }
+
+        private string ChooseAction(string templateName, TemplateDTO templateDTO, string actionName)
+        {
+            TemplateStorage = templateDTO;
+            if (actionName == "Create")
+            {
+                return StringExtensions.InvokeStringToMethod("TemplateDAL", actionName + templateName, templateName);
+                //return methodName(templateName, templateDTO);
+            }
+            else if(actionName == "Update")
+            {
+                return StringExtensions.InvokeStringToMethod("TemplateDAL", actionName + templateName, templateName);
+            }
+            else
+            {
+                return "Action not reconigezed";
+            }
+        }
+
+        private string UpdateLocation(string templateName, TemplateDTO templateDTO)
+        {
+            throw new NotImplementedException();
         }
 
         private string CreateMonster(string templateName, TemplateDTO templateDTO)
