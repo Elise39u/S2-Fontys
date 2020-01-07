@@ -46,7 +46,7 @@ namespace KillerAppS2Tests
         public void Get_Locations_From_DataBase()
         {
             List<TemplateDTO> templateDTOs = TemplateDalContainer.GetALLTemplatesFromDB("Location");
-            Assert.AreEqual(0, templateDTOs.Count(), "There are records found");
+            Assert.AreEqual(3, templateDTOs.Count(), "There are records found");
         }
 
         [Test]
@@ -63,6 +63,28 @@ namespace KillerAppS2Tests
 
             string result = TemplateLogic.CreateTemplate("Location", Locaiton);
             Assert.AreEqual("Insert succesfull", result);
+        }
+
+        [Test]
+        public void Get_A_Single_Location()
+        {
+            TemplateDTO template = TemplateDalContainer.GetATemplateById(3, "Location");
+            Assert.AreEqual(3, template.LocationId, "Id is does not match with the records id");
+            Assert.AreEqual("A new Beginning?", template.Name, "Name does not match  with the records name");
+            Assert.AreEqual(1, template.AreaId, "Area id does not match with the records Area id");
+        }
+
+        [Test]
+        public void Delete_Location_Test()
+        {
+            string templateName = "Location";
+
+            TemplateDTO template = TemplateDalContainer.GetATemplateById(2, templateName);
+            Assert.AreEqual(2, template.LocationId, "Id is does not match with the records id");
+            Assert.AreEqual("The Bed Room", template.Name, "Name does not match  with the records name");
+
+            string deleteResult = TemplateDalContainer.DeleteTemplate(templateName, 2);
+            Assert.AreEqual($"Delete of {templateName} was a succes", deleteResult, "Delete action failed");
         }
     }
 }

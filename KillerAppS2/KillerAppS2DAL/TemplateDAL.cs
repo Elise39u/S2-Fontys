@@ -14,10 +14,27 @@ namespace KillerAppS2DAL
         SqlCommand cmd;
         public List<TemplateDTO> Templates = new List<TemplateDTO>();
         public TemplateDTO TemplateStorage;
+        public TemplateDTO Template;
 
-        public TemplateDTO DeleteTemplate()
+        public string DeleteTemplate(string templateName, int templateID)
         {
-            throw new NotImplementedException();
+            string Query = $"DELETE FROM IVPJustin_{templateName} WHERE {templateName}_Id=" + templateID;
+            
+            using (cmd = new SqlCommand(Query, conn))
+            {
+                conn.Open();
+                int Result = cmd.ExecuteNonQuery();
+                conn.Close();
+
+                if (Result == 0)
+                {
+                    return $"Delete of {templateName} Failed";
+                }
+                else
+                {
+                    return $"Delete of {templateName} was a succes";
+                }
+            };
         }
 
         public List<TemplateDTO> GetALLTemplatesFromDB(string templateName)
@@ -30,17 +47,11 @@ namespace KillerAppS2DAL
             {
                 while(reader.Read())
                 {
-                    TemplateDTO template = new TemplateDTO
+                    if (templateName == "Location")
                     {
-                        LocationId = reader.GetInt32(0),
-                        Name = reader.GetString(1),
-                        Title = reader.GetString(2),
-                        Story = reader.GetString(3),
-                        AreaId = reader.GetInt32(4),
-                        FotoUrl = reader.GetString(5)
-                    };
-
-                    Templates.Add(template);
+                        Template = CreateLocationTemplate(reader, "stop");
+                        Templates.Add(Template);
+                    }
                 }
             }
             conn.Close();
@@ -49,7 +60,51 @@ namespace KillerAppS2DAL
 
         public TemplateDTO GetATemplateById(int templateId, string templateName)
         {
-            throw new NotImplementedException();
+            string Query = $"SELECT * FROM IVPJustin_{templateName} WHERE {templateName}_Id=" + templateId;
+
+            conn.Open();
+            cmd = new SqlCommand(Query, conn);
+            using (SqlDataReader reader = cmd.ExecuteReader())
+            {
+                if (templateName == "Location")
+                {
+                    Template = CreateLocationTemplate(reader, "start");
+                }
+            }
+            conn.Close();
+            return Template;
+        }
+
+        private static TemplateDTO CreateLocationTemplate(SqlDataReader reader, string readerCheck)
+        {
+            if (readerCheck == "start")
+            {
+                if (reader.Read())
+                {
+                    return CreateLocationDTO(reader);
+                }
+                else
+                {
+                    return new TemplateDTO();
+                }
+            }
+            else
+            {
+                return CreateLocationDTO(reader);
+            }
+        }
+
+        private static TemplateDTO CreateLocationDTO(SqlDataReader reader)
+        {
+            return new TemplateDTO
+            {
+                LocationId = reader.GetInt32(0),
+                Name = reader.GetString(1),
+                Title = reader.GetString(2),
+                Story = reader.GetString(3),
+                AreaId = reader.GetInt32(4),
+                FotoUrl = reader.GetString(5)
+            };
         }
 
         public string UpdateTemplate(TemplateDTO templateDTO, string templateName)
@@ -62,7 +117,7 @@ namespace KillerAppS2DAL
             return ChooseTemplateAction(templateName, templateDTO, "Create");
         }
 
-        private string ChooseTemplateAction(string templateName, TemplateDTO templateDTO, string actionName)
+        public string ChooseTemplateAction(string templateName, TemplateDTO templateDTO, string actionName)
         {
             if (templateName == "Location")
             {
@@ -96,21 +151,23 @@ namespace KillerAppS2DAL
             }
             else
             {
-                return "TemplateName is not been reconigzed";
+                return "TemplateName has not been reconigzed";
             }
         }
 
-        private string ChooseAction(string templateName, TemplateDTO templateDTO, string actionName)
+        public string ChooseAction(string templateName, TemplateDTO templateDTO, string actionName)
         {
             TemplateStorage = templateDTO;
+            var classType = GetType();
+            string methodName =  actionName + templateName;
             if (actionName == "Create")
             {
-                return StringExtensions.InvokeStringToMethod("TemplateDAL", actionName + templateName, templateName);
+                return InvokerClass.InvokeStringToMethod(classType.ToString(), methodName, templateName);
                 //return methodName(templateName, templateDTO);
             }
             else if(actionName == "Update")
             {
-                return StringExtensions.InvokeStringToMethod("TemplateDAL", actionName + templateName, templateName);
+                return InvokerClass.InvokeStringToMethod(classType.ToString(), methodName, templateName);
             }
             else
             {
@@ -118,37 +175,37 @@ namespace KillerAppS2DAL
             }
         }
 
-        private string UpdateLocation(string templateName, TemplateDTO templateDTO)
+        public string UpdateLocation(string templateName, TemplateDTO templateDTO)
         {
             throw new NotImplementedException();
         }
 
-        private string CreateMonster(string templateName, TemplateDTO templateDTO)
+        public string CreateMonster(string templateName, TemplateDTO templateDTO)
         {
             throw new NotImplementedException();
         }
 
-        private string CreateItem(string templateName, TemplateDTO templateDTO)
+        public string CreateItem(string templateName, TemplateDTO templateDTO)
         {
             throw new NotImplementedException();
         }
 
-        private string CreateArea(string templateName, TemplateDTO templateDTO)
+        public string CreateArea(string templateName, TemplateDTO templateDTO)
         {
             throw new NotImplementedException();
         }
 
-        private string CreateShop(string templateName, TemplateDTO templateDTO)
+        public string CreateShop(string templateName, TemplateDTO templateDTO)
         {
             throw new NotImplementedException();
         }
 
-        private string CreateNpc(string templateName, TemplateDTO templateDTO)
+        public string CreateNpc(string templateName, TemplateDTO templateDTO)
         {
             throw new NotImplementedException();
         }
 
-        private string CreateLocation(string templateName, TemplateDTO templateDTO)
+        public string CreateLocation(string templateName, TemplateDTO templateDTO)
         {
             string Query = $"INSERT INTO IVPJustin_{templateName}(Name, Title, Story, area_Id, Foto_url) " +
                 $"VALUES(@Name, @Title, @Story, @area_Id, @Foto_url)";

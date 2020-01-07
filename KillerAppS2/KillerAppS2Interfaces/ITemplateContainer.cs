@@ -8,7 +8,7 @@ namespace KillerAppS2Interfaces
     {
         T GetATemplateById(int templateId, string templateName);
         List<T> GetALLTemplatesFromDB(string templateName);
-        T DeleteTemplate();
+        string DeleteTemplate(string templateName, int templateID);
         string CreateTemplate(string templateName, T templateDTO);
     }
 }

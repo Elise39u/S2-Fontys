@@ -28,5 +28,11 @@ namespace KillerAppS2Logic
             TemplateDTOs = TemplateDalContainer.GetALLTemplatesFromDB(templateName);
             return TemplateDTOs;
         }
+
+        public string DeleteTemplate(string templateName, int templateId)
+        {
+            string result = TemplateDalContainer.DeleteTemplate(templateName, templateId);
+            return result; 
+        }
     }
 }
