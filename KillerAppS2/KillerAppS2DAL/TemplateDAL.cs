@@ -122,32 +122,26 @@ namespace KillerAppS2DAL
             if (templateName == "Location")
             {
                 return ChooseAction(templateName, templateDTO, actionName);
-                // return CreateLocation()
             }
             else if (templateName == "NPC")
             {
                 return ChooseAction(templateName, templateDTO, actionName);
-                //return CreateNpc(templateName, templateDTO);
             }
             else if (templateName == "Monster")
             {
                 return ChooseAction(templateName, templateDTO, actionName);
-                // return CreateMonster(templateName, templateDTO);
             }
             else if (templateName == "Item")
             {
                 return ChooseAction(templateName, templateDTO, actionName);
-                // return CreateItem(templateName, templateDTO);
             }
             else if (templateName == "Shop")
             {
                 return ChooseAction(templateName, templateDTO, actionName);
-                //return CreateShop(templateName, templateDTO);
             }
             else if (templateName == "area")
             {
                 return ChooseAction(templateName, templateDTO, actionName);
-                //return CreateArea(templateName, templateDTO);
             }
             else
             {
@@ -162,12 +156,11 @@ namespace KillerAppS2DAL
             string methodName =  actionName + templateName;
             if (actionName == "Create")
             {
-                return InvokerClass.InvokeStringToMethod(classType.ToString(), methodName, templateName);
-                //return methodName(templateName, templateDTO);
+                return InvokerClass.InvokeStringToMethod(classType.ToString(), methodName, templateName, templateDTO);
             }
             else if(actionName == "Update")
             {
-                return InvokerClass.InvokeStringToMethod(classType.ToString(), methodName, templateName);
+                return InvokerClass.InvokeStringToMethod(classType.ToString(), methodName, templateName, templateDTO);
             }
             else
             {
@@ -200,7 +193,7 @@ namespace KillerAppS2DAL
             throw new NotImplementedException();
         }
 
-        public string CreateNpc(string templateName, TemplateDTO templateDTO)
+        public string CreateNPC(string templateName, TemplateDTO templateDTO)
         {
             throw new NotImplementedException();
         }

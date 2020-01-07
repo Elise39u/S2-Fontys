@@ -46,7 +46,7 @@ namespace KillerAppS2Tests
         public void Get_Locations_From_DataBase()
         {
             List<TemplateDTO> templateDTOs = TemplateDalContainer.GetALLTemplatesFromDB("Location");
-            Assert.AreEqual(3, templateDTOs.Count(), "There are records found");
+            Assert.AreEqual(4, templateDTOs.Count(), "There are records found");
         }
 
         [Test]
