@@ -12,11 +12,13 @@ namespace KillerAppS2.ViewModel
     public class UserLogicTest
     {
         public IUserLogic<UserDTO> UserDAL;
+        public UserLogic UserLogic;
 
         [SetUp]
         public void Setup()
         {
             UserDAL = UserFactory.CreateUserDALLogic();
+            UserLogic = new UserLogic();
         }
 
         [Test]
@@ -56,7 +58,7 @@ namespace KillerAppS2.ViewModel
         [Test]
         public void Register_With_Vaild_Information()
         {
-            string result = UserDAL.Register("justin555@live.nl", "Justin", "Van de ", "Laar", "Dropzone8");
+            string result = UserLogic.Register("justin555@live.nl", "Justin", "Van de ", "Laar", "Dropzone8");
             
             Assert.AreEqual("Insert Succesfull", result, "User not created");
         }
@@ -64,17 +66,41 @@ namespace KillerAppS2.ViewModel
         [Test]
         public void Register_With_Empty_Information()
         {
-            string result = UserDAL.Register("", "", "", "", "Dropzone8");
+            string result = UserLogic.Register("", "", "", "", "Dropzone8");
             
-            Assert.AreEqual("An error occurerd", result, "User Created");
+            Assert.AreEqual("Email doens`t contains @ or is empty", result, "User Created");
         }
 
         [Test]
-        public void Register_With_InVaild_Information()
+        public void Register_With_InVaild_Information_Without_Email()
         {
-            string result = UserDAL.Register(2.ToString(), "", "", "", "Dropzone8" + 5);
+            string result = UserLogic.Register(2.ToString(), "Justin", "Van de", "Laar", "Dropzone8" + 5);
 
-            Assert.AreEqual("An error occurerd", result, "User Created");
+            Assert.AreEqual("Email doens`t contains @ or is empty", result, "User Created");
+        }
+
+        [Test]
+        public void Register_With_InVaild_Information_Without_FirstName()
+        {
+            string result = UserLogic.Register("Justin555@live.nl", "", "Van de", "Laar", "Dropzone8" + 5);
+
+            Assert.AreEqual("Firstname is empty", result, "User Created");
+        }
+
+        [Test]
+        public void Register_With_InVaild_Information_Without_LastName()
+        {
+            string result = UserLogic.Register("Justin555@live.nl", "Justin", "Van de", "", "Dropzone8" + 5);
+
+            Assert.AreEqual("Lastname is empty", result, "User Created");
+        }
+
+        [Test]
+        public void Register_With_InVaild_Information_Without_Password()
+        {
+            string result = UserLogic.Register("Justin555@live.nl", "Justin", "Van de", "Laar", "");
+
+            Assert.AreEqual("Password is empty", result, "User Created");
         }
 
         [Test]

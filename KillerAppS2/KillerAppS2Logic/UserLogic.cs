@@ -22,6 +22,11 @@ namespace KillerAppS2Logic
 
         public string Register(string email, string firstName, string prefix, string lastName, string password)
         {
+            if (!email.Contains("@") || email == "") { return "Email doens`t contains @ or is empty"; };
+            if (firstName == "") { return "Firstname is empty"; };
+            if (lastName == "") { return "Lastname is empty"; };
+            if (password == "") { return "Password is empty"; };
+
             string result = UserDAL.Register(email, firstName, prefix, lastName, password);
             return result;
         }
