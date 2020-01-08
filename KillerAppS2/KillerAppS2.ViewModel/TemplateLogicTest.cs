@@ -70,7 +70,7 @@ namespace KillerAppS2Tests
         {
             TemplateDTO template = TemplateDalContainer.GetATemplateById(3, "Location");
             Assert.AreEqual(3, template.LocationId, "Id is does not match with the records id");
-            Assert.AreEqual("A new Beginning?", template.Name, "Name does not match  with the records name");
+            Assert.AreEqual("The Kitchen", template.Name, "Name does not match  with the records name");
             Assert.AreEqual(1, template.AreaId, "Area id does not match with the records Area id");
         }
 
@@ -85,6 +85,32 @@ namespace KillerAppS2Tests
 
             string deleteResult = TemplateDalContainer.DeleteTemplate(templateName, 2);
             Assert.AreEqual($"Delete of {templateName} was a succes", deleteResult, "Delete action failed");
+        }
+
+        [Test]
+        public void Update_Location_Test()
+        {
+            string templateName = "Location";
+
+            TemplateDTO template = TemplateDalContainer.GetATemplateById(3, templateName);
+            Assert.AreEqual(3, template.LocationId, "Id is does not match with the records id");
+            Assert.AreEqual("A new Beginning?", template.Name, "Name does not match with the records name");
+
+            TemplateDTO templateDTO = new TemplateDTO
+            {
+                Name = "The Kitchen",
+                Title = "A place to come to strength",
+                Story = "Well how long did i pass out was it a week a month or maby even a year <br>" +
+                "Would the food in the fridige still be good or should i search for something fresh",
+                AreaId = 1,
+                FotoUrl = "~/Images/Background"
+            };
+
+            string testResult = TemplateDalLogic.UpdateTemplate(3, templateDTO, templateName);
+            
+            TemplateDTO templateUpdated = TemplateDalContainer.GetATemplateById(3, templateName);
+            Assert.AreEqual("The Kitchen", templateUpdated.Name, "Name does not match with the records name");
+            Assert.AreEqual("Update succesfull", testResult, "Update failed");
         }
     }
 }

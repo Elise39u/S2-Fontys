@@ -7,6 +7,6 @@ namespace KillerAppS2Interfaces
 {
     public interface ITemplateLogic<T>
     {
-        string UpdateTemplate(TemplateDTO templateDTO, string templateName);
+        string UpdateTemplate(int templateId, TemplateDTO templateDTO, string templateName);
     }
 }

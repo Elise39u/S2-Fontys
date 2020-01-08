@@ -12,7 +12,7 @@ namespace KillerAppS2Interfaces
         //Source used here
         // https://www.codeproject.com/Articles/19911/Dynamically-Invoke-A-Method-Given-Strings-with-Met
 
-        public static string InvokeStringToMethod (string typeName, string methodName, string stringParam, TemplateDTO templateDTO)
+        public static string InvokeStringToMethod (string typeName, string methodName, string stringParam, TemplateDTO templateDTO, int templateId)
         {
             // Get the Type for the class
             Type calledType = Type.GetType(typeName);
@@ -22,21 +22,11 @@ namespace KillerAppS2Interfaces
             // Note that stringParam is passed via the last parameter of InvokeMember,
             // as an array of Objects.
 
-            //Issue --> System.Reflection.TargetException Object does not match target type
-
-            /*
-             * var TestData = calledType.GetMethod(methodName);
-             string s = (string)calledType.InvokeMember(
-                           methodName,
-             BindingFlags.Instance | BindingFlags.Public | BindingFlags.Static | BindingFlags.InvokeMethod,
-             null, null,
-             new object[] { new string[] { stringParam } });
-             */
-             var TestData = calledType.GetMethod(methodName);
-             var s = TestData.Invoke(
+             var methodInfo = calledType.GetMethod(methodName);
+             var s = methodInfo.Invoke(
                                templateDAL,
                                BindingFlags.Instance | BindingFlags.Public | BindingFlags.Static | BindingFlags.InvokeMethod,
-                               null, new object[] {  stringParam, templateDTO },
+                               null, new object[] {  stringParam, templateDTO, templateId },
                                null);
 
              // Return the string that was returned by the called method.

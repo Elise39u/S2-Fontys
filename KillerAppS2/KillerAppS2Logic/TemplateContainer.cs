@@ -16,9 +16,9 @@ namespace KillerAppS2Logic
             TemplateDalLogic = TemplateFactory.CreateTemplateDALLogic();
         }
 
-        public string UpdateTemplate(string templateName, TemplateDTO templateDTO)
+        public string UpdateTemplate(string templateName, int templateId, TemplateDTO templateDTO)
         {
-            string result = TemplateDalLogic.UpdateTemplate(templateDTO, templateName);
+            string result = TemplateDalLogic.UpdateTemplate(templateId, templateDTO, templateName);
             return result;
         }
     }
