@@ -50,14 +50,21 @@ namespace ContainerShip
                 totalCargoWeight += container.Weight;
             }
 
-            int halfShipWeight = MaxWeight / 2;
-            if (totalCargoWeight < halfShipWeight)
+            if (totalCargoWeight > MaxWeight)
             {
-                return "Cargo is too ligth";
+                return "Cargo weight is bigger than the max weight of the ship";
             }
             else
             {
-                return "Cargo Accepted";
+                int halfShipWeight = MaxWeight / 2;
+                if (totalCargoWeight < halfShipWeight)
+                {
+                    return "Cargo is too ligth";
+                }
+                else
+                {
+                    return "Cargo Accepted";
+                }
             }
         }
     }
