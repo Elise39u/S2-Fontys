@@ -1,0 +1,9 @@
+D:\Fontys\VS Projects\S2-Software-Fontys\ContainerShip\ContainerShip\ContainerShip\bin\Debug\netcoreapp2.1\ContainerShip.deps.json
+D:\Fontys\VS Projects\S2-Software-Fontys\ContainerShip\ContainerShip\ContainerShip\bin\Debug\netcoreapp2.1\ContainerShip.dll
+D:\Fontys\VS Projects\S2-Software-Fontys\ContainerShip\ContainerShip\ContainerShip\bin\Debug\netcoreapp2.1\ContainerShip.pdb
+D:\Fontys\VS Projects\S2-Software-Fontys\ContainerShip\ContainerShip\ContainerShip\obj\Debug\netcoreapp2.1\ContainerShip.csprojAssemblyReference.cache
+D:\Fontys\VS Projects\S2-Software-Fontys\ContainerShip\ContainerShip\ContainerShip\obj\Debug\netcoreapp2.1\ContainerShip.csproj.CoreCompileInputs.cache
+D:\Fontys\VS Projects\S2-Software-Fontys\ContainerShip\ContainerShip\ContainerShip\obj\Debug\netcoreapp2.1\ContainerShip.AssemblyInfoInputs.cache
+D:\Fontys\VS Projects\S2-Software-Fontys\ContainerShip\ContainerShip\ContainerShip\obj\Debug\netcoreapp2.1\ContainerShip.AssemblyInfo.cs
+D:\Fontys\VS Projects\S2-Software-Fontys\ContainerShip\ContainerShip\ContainerShip\obj\Debug\netcoreapp2.1\ContainerShip.dll
+D:\Fontys\VS Projects\S2-Software-Fontys\ContainerShip\ContainerShip\ContainerShip\obj\Debug\netcoreapp2.1\ContainerShip.pdb
