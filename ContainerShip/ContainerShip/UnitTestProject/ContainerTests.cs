@@ -23,7 +23,9 @@ namespace Tests
         {
             Container container = new Container(20, 20, ContainerType.normal, 35000);
 
-            Assert.IsNotNull(container, "A too heavy container has been made");
+            Assert.AreEqual(0, container.Weight, "A too heavy container Wight has been made");
+            Assert.AreEqual(0, container.Width, "A too heavy container width has been made");
+            Assert.AreEqual(0, container.Height, "A too heavy container height has been made");
         }
 
         [Test]
@@ -31,7 +33,9 @@ namespace Tests
         {
             Container container = new Container(20, 20, ContainerType.normal, 2000);
 
-            Assert.IsNotNull(container, "A too light container has been made");
+            Assert.AreEqual(0, container.Weight, "A too light container Wight has been made");
+            Assert.AreEqual(0, container.Width, "A too light container width has been made");
+            Assert.AreEqual(0, container.Height, "A too light container height has been made");
         }
 
         [Test]
